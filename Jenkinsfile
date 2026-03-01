@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         UNITY_EXE = 'E:\\Unity\\6000.3.2f1\\Editor\\Unity.exe'
-        BUILD_PATH = 'Builds/Windows'
+        BUILD_PATH = 'Builds'
     }
 
     stages {

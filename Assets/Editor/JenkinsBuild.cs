@@ -15,7 +15,7 @@ public class JenkinsBuild
             .ToArray();
 
         // 正確做法：資料夾 + exe 分開
-        string folderPath = "Builds/Windows";
+        string folderPath = "Builds";
         string exePath = Path.Combine(folderPath, "RulesOfCard.exe");
 
         if (!Directory.Exists(folderPath))
