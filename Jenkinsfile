@@ -1,52 +1,46 @@
 pipeline {
     agent any
 
-    // 定義環境變數，方便之後修改
     environment {
-        // 請確保這裡的路徑與你電腦上的 Unity.exe 一致 (注意反斜線要雙寫 \\)
         UNITY_EXE = 'E:\\Unity\\6000.3.2f1\\Editor\\Unity.exe'
-        PROJECT_PATH = "${WORKSPACE}"
-        BUILD_TARGET = 'Windows'
-        // 打包輸出的資料夾
         BUILD_PATH = 'Builds/Windows'
     }
 
     stages {
+
         stage('Environment Check') {
             steps {
-                echo "檢查環境中..."
+                echo "檢查 Unity 是否存在..."
                 bat "if not exist \"${UNITY_EXE}\" (echo Unity Editor Not Found && exit 1)"
             }
         }
 
         stage('Checkout') {
             steps {
-                // 這會自動沿用你在 Jenkins 任務設定中定義的分支與憑據
                 checkout scm
             }
         }
 
-        stage('Unity Build WebGL') {
+        stage('Unity Build Windows') {
             steps {
-                echo "開始打包 WebGL..."
-                // 呼叫你寫在 Assets/Editor/JenkinsBuild.cs 裡的 BuildProject 方法
+                echo "開始打包 Windows..."
                 bat """
                 "${UNITY_EXE}" ^
                 -batchmode ^
+                -nographics ^
                 -quit ^
-                -projectPath "${PROJECT_PATH}" ^
+                -projectPath "%WORKSPACE%" ^
+                -buildTarget Win64 ^
                 -executeMethod JenkinsBuild.BuildProject ^
-                -logFile "${WORKSPACE}\\unity_build_log.txt"
+                -logFile "%WORKSPACE%\\unity_build_log.txt"
                 """
             }
         }
 
         stage('Archive Results') {
             steps {
-                echo "儲存成品..."
-                // 將打包後的資料夾存回 Jenkins，方便下載
-                archiveArtifacts artifacts: "${BUILD_PATH}/**", followSymlinks: false
-                // 同時存儲 Log，方便出錯時查看
+                echo "儲存打包成品..."
+                archiveArtifacts artifacts: "${BUILD_PATH}/**", fingerprint: true
                 archiveArtifacts artifacts: 'unity_build_log.txt', allowEmptyArchive: true
             }
         }

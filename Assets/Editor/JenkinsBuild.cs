@@ -8,39 +8,39 @@ public class JenkinsBuild
 {
     public static void BuildProject()
     {
-        // 1. 自動取得 Build Settings 中勾選的場景
+        // 取得勾選場景
         string[] scenes = EditorBuildSettings.scenes
             .Where(s => s.enabled)
             .Select(s => s.path)
             .ToArray();
 
-        // 2. 建議改用相對路徑，這樣換電腦也能跑
-        string buildPath = "Builds/Windows/Rules Of Card.exe";
+        // 正確做法：資料夾 + exe 分開
+        string folderPath = "Builds/Windows";
+        string exePath = Path.Combine(folderPath, "RulesOfCard.exe");
 
-        if (!Directory.Exists(buildPath))
+        if (!Directory.Exists(folderPath))
         {
-            Directory.CreateDirectory(buildPath);
+            Directory.CreateDirectory(folderPath);
         }
 
         BuildPlayerOptions buildPlayerOptions = new();
         buildPlayerOptions.scenes = scenes;
-        buildPlayerOptions.locationPathName = buildPath;
+        buildPlayerOptions.locationPathName = exePath;
         buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
         buildPlayerOptions.options = BuildOptions.None;
 
-        // 執行打包
         BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
         BuildSummary summary = report.summary;
 
         if (summary.result == BuildResult.Succeeded)
         {
-            Debug.Log("Build Succeeded: " + summary.totalSize + " bytes");
-            EditorApplication.Exit(0); // 成功結束
+            Debug.Log("Windows Build Succeeded");
+            EditorApplication.Exit(0);
         }
         else
         {
-            Debug.LogError("Build Failed!");
-            EditorApplication.Exit(1); // 失敗結束，讓 Jenkins 變紅燈
+            Debug.LogError("Windows Build Failed");
+            EditorApplication.Exit(1);
         }
     }
 }
