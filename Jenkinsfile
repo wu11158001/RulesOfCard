@@ -1,31 +1,25 @@
 pipeline {
     agent any
 
+    parameters {
+        booleanParam(name: 'BUILD_APP', defaultValue: true, description: '是否建置主程式 (EXE)')
+        booleanParam(name: 'BUILD_ADDRESSABLES', defaultValue: false, description: '是否建置 Addressables 資源包')
+        string(name: 'COMMIT_MSG', defaultValue: 'Update Addressables for GitHub Pages', description: 'Git Commit 訊息')
+    }
+
     environment {
         UNITY_EXE = 'E:\\Unity\\6000.3.2f1\\Editor\\Unity.exe'
-        BUILD_PATH = 'Builds'
+        EXTERNAL_ASSETS_DIR = 'E:\\MyUnityProject\\Rules Of Card File\\Rules Of Card Assets'
+        TARGET_PLATFORM = 'StandaloneWindows64'
     }
 
     stages {
         stage('Environment Check') {
             steps {
-                echo "檢查 Unity 環境與專案狀態..."
                 script {
-                    // 1. 檢查 Unity 執行檔是否存在
                     bat "if not exist \"${UNITY_EXE}\" (echo Unity Editor Not Found && exit 1)"
-
-                    // 2. 檢查專案是否正在運行 (透過檢查 Unity 進程)
-                    // 使用 tasklist 檢查是否有 Unity.exe 在執行，並過濾當前專案
-                    // 註：這是一個嚴格檢查，若機器上有任何 Unity 正在執行都會擋住。
-                    // 如果要更精準，可以檢查專案目錄下的 Temp/UnityLockFile
-                    def status = bat(
-                        returnStatus: true, 
-                        script: 'tasklist /FI "IMAGENAME eq Unity.exe" | findstr /I "Unity.exe"'
-                    )
-                    
-                    if (status == 0) {
-                        error "❌ 檢測到 Unity Editor 正在運行中，為避免檔案衝突，停止打包！請先關閉 Unity。"
-                    }
+                    // 檢查外部資源目錄是否存在 (Git 倉庫所在處)
+                    bat "if not exist \"${EXTERNAL_ASSETS_DIR}\" (echo Assets Repository Folder Not Found && exit 1)"
                 }
             }
         }
@@ -36,37 +30,63 @@ pipeline {
             }
         }
 
-        stage('Unity Build Windows') {
+        stage('Build Addressables') {
+            when { expression { return params.BUILD_ADDRESSABLES } }
             steps {
-                echo "開始打包 Windows..."
+                echo "🚀 打包 Addressables..."
                 bat """
-                "${UNITY_EXE}" ^
-                -batchmode ^
-                -nographics ^
-                -quit ^
+                "${UNITY_EXE}" -batchmode -nographics -quit ^
                 -projectPath "%WORKSPACE%" ^
-                -buildTarget Win64 ^
-                -executeMethod JenkinsBuild.BuildProject ^
-                -logFile "%WORKSPACE%\\unity_build_log.txt"
+                -executeMethod JenkinsBuild.BuildAddressables ^
+                -logFile "%WORKSPACE%\\logs_addressables.txt"
                 """
             }
         }
 
-        stage('Archive Results') {
+        stage('Build Main App') {
+            when { expression { return params.BUILD_APP } }
             steps {
-                echo "儲存打包成品..."
-                archiveArtifacts artifacts: "${BUILD_PATH}/**", fingerprint: true
-                archiveArtifacts artifacts: 'unity_build_log.txt', allowEmptyArchive: true
+                echo "🚀 打包主程式..."
+                bat """
+                "${UNITY_EXE}" -batchmode -nographics -quit ^
+                -projectPath "%WORKSPACE%" ^
+                -executeMethod JenkinsBuild.BuildProject ^
+                -logFile "%WORKSPACE%\\logs_mainbuild.txt"
+                """
+            }
+        }
+
+        stage('Push to GitHub Pages') {
+            when { expression { return params.BUILD_ADDRESSABLES } }
+            steps {
+                echo "📦 切換到外部資料夾並同步至 GitHub..."
+                script {
+                    // 使用 dir 切換到外部的資源 Git 倉庫執行指令
+                    dir("${EXTERNAL_ASSETS_DIR}") {
+                        bat """
+                            git config user.email "wu11158001@gmail.com"
+                            git config user.name "wu11158001"
+
+                            :: 檢查是否有檔案變動
+                            git status
+                            git add .
+                            
+                            :: 只有在有變動時才執行 commit 與 push
+                            git diff-index --quiet HEAD || (
+                                git commit -m "${params.COMMIT_MSG}"
+                                git push origin HEAD
+                                echo "✅ 資源已成功更新至 GitHub"
+                            )
+                        """
+                    }
+                }
             }
         }
     }
 
     post {
-        success {
-            echo '✅ 打包成功！'
-        }
-        failure {
-            echo '❌ 流程中斷或失敗，請檢查 Log 或確認 Unity 是否已關閉。'
+        always {
+            archiveArtifacts artifacts: 'logs_*.txt', allowEmptyArchive: true
         }
     }
 }

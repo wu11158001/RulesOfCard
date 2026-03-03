@@ -1,0 +1,61 @@
+:root {
+}
+
+.ButtonNormal {
+    width: 15%;
+    height: 10%;
+    -unity-slice-type: sliced;
+    transition-property: all;
+    transition-duration: 0s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    background-repeat: no-repeat no-repeat;
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-slice-right: 0;
+    -unity-slice-scale: 0;
+    display: flex;
+    visibility: visible;
+    overflow: visible;
+    font-size: 36px;
+    -unity-font-style: bold;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    -unity-text-outline-width: 1px;
+    text-shadow: 0 0 0 rgb(255, 255, 255);
+    letter-spacing: 0;
+    background-color: rgb(255, 161, 0);
+    -unity-text-outline-color: rgb(200, 200, 200);
+    color: rgb(89, 48, 0);
+}
+
+.ButtonHover:hover {
+    scale: 1.1 1.1;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    color: rgb(209, 209, 209);
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(19, 19, 19);
+    font-size: 36px;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    background-color: rgb(255, 183, 0);
+}
+
+.ButtonActive:active {
+    scale: 1 1;
+}

@@ -3,18 +3,20 @@ using System.Linq;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 using System.IO;
+using UnityEditor.AddressableAssets.Settings;
 
 public class JenkinsBuild
 {
+    /// <summary>
+    /// 打主包
+    /// </summary>
     public static void BuildProject()
     {
-        // 取得勾選場景
         string[] scenes = EditorBuildSettings.scenes
             .Where(s => s.enabled)
             .Select(s => s.path)
             .ToArray();
 
-        // 正確做法：資料夾 + exe 分開
         string folderPath = "Builds";
         string exePath = Path.Combine(folderPath, "RulesOfCard.exe");
 
@@ -30,17 +32,31 @@ public class JenkinsBuild
         buildPlayerOptions.options = BuildOptions.None;
 
         BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
-        BuildSummary summary = report.summary;
 
-        if (summary.result == BuildResult.Succeeded)
+        // 檢查結果並退出
+        if (report.summary.result == BuildResult.Succeeded)
         {
             Debug.Log("Windows Build Succeeded");
-            EditorApplication.Exit(0);
+            if (Application.isBatchMode) EditorApplication.Exit(0);
         }
         else
         {
             Debug.LogError("Windows Build Failed");
-            EditorApplication.Exit(1);
+            if (Application.isBatchMode) EditorApplication.Exit(1);
         }
+    }
+
+    /// <summary>
+    /// 打資源包
+    /// </summary>
+    public static void BuildAddressables()
+    {
+        Debug.Log("[Jenkins] 開始建置 Addressables...");
+
+        AddressableAssetSettings.CleanPlayerContent();
+        AddressableAssetSettings.BuildPlayerContent();
+
+        Debug.Log("[Jenkins] Addressables 建置完成！");
+        if (Application.isBatchMode) EditorApplication.Exit(0);
     }
 }
