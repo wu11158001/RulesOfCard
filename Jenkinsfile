@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(name: 'BUILD_APP', defaultValue: true, description: '是否建置主程式 (EXE)')
+        booleanParam(name: 'BUILD_EXE', defaultValue: true, description: '是否建置主程式 (EXE)')
         booleanParam(name: 'BUILD_ADDRESSABLES', defaultValue: false, description: '是否建置 Addressables 資源包')
         string(name: 'COMMIT_MSG', defaultValue: 'Update Addressables for GitHub Pages', description: 'Git Commit 訊息')
     }
