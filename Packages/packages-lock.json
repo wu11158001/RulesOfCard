@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.eastylabs.rosalina": {
+      "version": "https://github.com/Eastrall/Rosalina.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "bd7482d4c58cde332f8efc85b0ac45645155944d"
+    },
     "com.unity.2d.animation": {
       "version": "13.0.2",
       "depth": 0,

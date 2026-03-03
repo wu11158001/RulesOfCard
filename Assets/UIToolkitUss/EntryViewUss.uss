@@ -1,0 +1,15 @@
+:root {
+}
+
+.IconImg {
+    width: 200px;
+    height: 250px;
+    background-image: url("project://database/Assets/Testures/PokerCards/Deck01.png?fileID=-3502424558361539742&guid=5f0074f1c36da4a71bf1a5e1528a2f35&type=3#Deck01_0");
+    transition-duration: 1s;
+    translate: 0 0;
+}
+
+.IconImg_Up {
+    translate: 0 -30px;
+    transition-duration: 1s;
+}
