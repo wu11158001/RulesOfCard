@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: UIToolkit
   m_GUID: da2971dc2645bec43bf035fc13b978c4
   m_SerializeEntries:
+  - m_GUID: 56a4996672d8e79449a99840a8cea88e
+    m_Address: UIToolkitUss
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7aafc8660899ed548b9ada06cf5fcb21
     m_Address: UIToolKitAssets
     m_ReadOnly: 0
