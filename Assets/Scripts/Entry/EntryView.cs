@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public partial class EntryView : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public partial class EntryView : MonoBehaviour
     {
         InitializeDocument();
 
-        Invoke(nameof(IntoGameScene), 2);
         AnimateLoop();
+
+        AddressableManager.Instance.DownloadPreAssets(
+            progressCallback: null,
+            finishCallback: () => StartCoroutine(IIntoGameScene()));
     }
 
     /// <summary>
@@ -35,8 +39,10 @@ public partial class EntryView : MonoBehaviour
     /// <summary>
     /// 進入遊戲場景
     /// </summary>
-    private void IntoGameScene()
+    private IEnumerator IIntoGameScene()
     {
+        yield return new WaitForSeconds(1.5f);
+
         SceneLoadManager.Instance.LoadScene(
             sceneEnum: SceneEnum.Game,
             callback: () =>

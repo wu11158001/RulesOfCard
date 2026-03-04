@@ -16,3 +16,5 @@ MonoBehaviour:
   _files:
   - _type: 0
     _path: Assets/UIToolKitAssets/Entry/EntryView.uxml
+  - _type: 0
+    _path: Assets/UIToolKitAssets/Game/SelectModeView.uxml

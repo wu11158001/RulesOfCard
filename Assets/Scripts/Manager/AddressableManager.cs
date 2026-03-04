@@ -1,10 +1,35 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class AddressableManager : SingletonMonoBehaviour<AddressableManager>
 {
+    /// <summary>
+    /// 下載預載資源
+    /// </summary>
+    public async void DownloadPreAssets(Action<float> progressCallback, Action finishCallback)
+    {
+        try
+        {
+            var downloadHandle = Addressables.DownloadDependenciesAsync("PreLoad");
+            while (!downloadHandle.IsDone)
+            {
+                Debug.Log($"下載中: {downloadHandle.PercentComplete * 100}%");
+                progressCallback?.Invoke(downloadHandle.PercentComplete);
+                await Task.Yield();
+            }
+            Addressables.Release(downloadHandle);
+
+            finishCallback?.Invoke();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"下載預載資源錯誤: {e}");
+        }
+    }
+
     /// <summary>
     /// 載入資源
     /// </summary>

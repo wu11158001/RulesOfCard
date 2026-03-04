@@ -9,7 +9,7 @@ pipeline {
 
     environment {
         UNITY_EXE = 'E:\\Unity\\6000.3.2f1\\Editor\\Unity.exe'
-        EXTERNAL_ASSETS_DIR = 'E:\\MyUnityProject\\Rules Of Card File\\Rules Of Card Assets'
+        EXTERNAL_ASSETS_DIR = 'E:\\JenkinsData\\Jenkins\\.jenkins\\workspace\\Rules Of Card Assets'
         TARGET_PLATFORM = 'StandaloneWindows64'
     }
 
@@ -81,23 +81,37 @@ pipeline {
         stage('Push to GitHub Pages') {
             when { expression { return params.BUILD_ADDRESSABLES } }
             steps {
-                echo "📦 切換到外部資料夾並同步至 GitHub..."
+                echo "📦 準備同步資源至 GitHub main 分支..."
                 script {
-                    // 使用 dir 切換到外部的資源 Git 倉庫執行指令
                     dir("${EXTERNAL_ASSETS_DIR}") {
                         bat """
+                            @echo off
+                            :: 1. 設定使用者資訊
                             git config user.email "wu11158001@gmail.com"
                             git config user.name "wu11158001"
 
-                            :: 檢查是否有檔案變動
-                            git status
+                            :: 2. 強制切換/追蹤到 main 分支 (防止處於游離狀態)
+                            git checkout main || git checkout -b main
+
+                            :: 3. 加入檔案並檢查狀態
                             git add .
                             
-                            :: 只有在有變動時才執行 commit 與 push
-                            git diff-index --quiet HEAD || (
+                            :: 4. 提交與推送 (帶入強制的遠端分支路徑)
+                            :: git diff-index 檢查是否有索引變動
+                            git diff --cached --quiet || (
+                                echo [Git] 偵測到新資源，正在提交...
                                 git commit -m "${params.COMMIT_MSG}"
-                                git push origin HEAD
-                                echo "✅ 資源已成功更新至 GitHub"
+                                
+                                echo [Git] 正在推送到 origin main...
+                                :: 使用 HEAD:main 確保本地當前內容推送到遠端的 main
+                                git push origin HEAD:main
+                            )
+
+                            if %ERRORLEVEL% EQU 0 (
+                                echo ✅ GitHub Pages 資源同步完成！
+                            ) else (
+                                echo ❌ Git 操作失敗，請檢查權限或網路。
+                                exit 1
                             )
                         """
                     }

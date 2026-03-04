@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2183813932783860528}
   - component: {fileID: 4431016930603251023}
+  - component: {fileID: 4301571124854284609}
   m_Layer: 0
   m_Name: SelectModeView
   m_TagString: Untagged
@@ -55,3 +56,16 @@ MonoBehaviour:
   m_PivotReferenceSize: 0
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &4301571124854284609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524025051289685119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fa71f6beb750648bb6ad22018f9d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectModeView
+  _document: {fileID: 4431016930603251023}
