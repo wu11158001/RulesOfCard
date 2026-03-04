@@ -9,8 +9,7 @@ pipeline {
 
     environment {
         UNITY_EXE = 'E:\\Unity\\6000.3.2f1\\Editor\\Unity.exe'
-        EXTERNAL_ASSETS_DIR = 'E:\\JenkinsData\\Jenkins\\.jenkins\\workspace\\Rules Of Card Assets'
-        TARGET_PLATFORM = 'StandaloneWindows64'
+        EXTERNAL_ASSETS_DIR = 'E:\\JenkinsData\\Jenkins\\.jenkins\\workspace\\Rules Of Card Assets\\StandaloneWindows64'
     }
 
     stages {
