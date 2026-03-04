@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: b1c26368ed9ec25478111ba0e1d98411
   m_currentHash:
     serializedVersion: 2
-    Hash: edf93a00e50a1e1e4cd7750f1517c5aa
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_CatalogRequestsTimeout: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
       m_ProfileName: Default
       m_Values:
       - m_Id: 03cf447d493982b4f9348396140e060d
-        m_Value: 'E:\JenkinsData\Jenkins\.jenkins\workspace\Rules Of Card Assets[BuildTarget]'
+        m_Value: 'E:\JenkinsData\Jenkins\.jenkins\workspace\Rules Of Card Assets\[BuildTarget]'
       - m_Id: 5eb43e2689596df4daae1e6c535ba820
         m_Value: 'https://wu11158001.github.io/RulesOfCardAssests/[BuildTarget]'
       - m_Id: 7df35f67aeb826c4198cee1a42ebd143
