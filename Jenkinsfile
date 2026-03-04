@@ -81,39 +81,35 @@ pipeline {
         stage('Push to GitHub Pages') {
             when { expression { return params.BUILD_ADDRESSABLES } }
             steps {
-                echo "📦 準備同步資源至 GitHub main 分支..."
-                script {
-                    dir("${EXTERNAL_ASSETS_DIR}") {
-                        bat """
-                            @echo off
-                            :: 1. 設定使用者資訊
-                            git config user.email "wu11158001@gmail.com"
-                            git config user.name "wu11158001"
+                echo "📦 安全呼叫 Token 並同步至 GitHub..."
+                // 調用剛才設定的 ID，並將其內容放入變數 MY_TOKEN 中
+                withCredentials([string(credentialsId: 'My GitHub Token', variable: 'MY_TOKEN')]) {
+                    script {
+                        dir("${EXTERNAL_ASSETS_DIR}") {
+                            bat """
+                                @echo off
+                                git config user.email "wu11158001@gmail.com"
+                                git config user.name "wu11158001"
 
-                            :: 2. 強制切換/追蹤到 main 分支 (防止處於游離狀態)
-                            git checkout main || git checkout -b main
+                                :: 1. 使用 Token 重新設定 Remote URL (最關鍵的一步，解決卡住問題)
+                                :: 注意：這裡使用了變數 %MY_TOKEN%
+                                git remote set-url origin "https://%MY_TOKEN%@github.com/wu11158001/RulesOfCardAssests.git"
 
-                            :: 3. 加入檔案並檢查狀態
-                            git add .
-                            
-                            :: 4. 提交與推送 (帶入強制的遠端分支路徑)
-                            :: git diff-index 檢查是否有索引變動
-                            git diff --cached --quiet || (
-                                echo [Git] 偵測到新資源，正在提交...
-                                git commit -m "${params.COMMIT_MSG}"
-                                
-                                echo [Git] 正在推送到 origin main...
-                                :: 使用 HEAD:main 確保本地當前內容推送到遠端的 main
-                                git push origin HEAD:main
-                            )
+                                :: 2. 檢查變動
+                                git add .
+                                git diff --cached --quiet || (
+                                    echo [Git] 偵測到變更，準備提交...
+                                    git commit -m "${params.COMMIT_MSG}"
+                                    
+                                    echo [Git] 正在推送到 main 分支...
+                                    :: 這裡就不會再跳出視窗要求輸入密碼了
+                                    git push origin HEAD:main
+                                )
 
-                            if %ERRORLEVEL% EQU 0 (
-                                echo ✅ GitHub Pages 資源同步完成！
-                            ) else (
-                                echo ❌ Git 操作失敗，請檢查權限或網路。
-                                exit 1
-                            )
-                        """
+                                :: 3. 安全考量：完成後把 URL 改回原本的 (不含 Token 的版本)
+                                git remote set-url origin https://github.com/wu11158001/RulesOfCardAssests.git
+                            """
+                        }
                     }
                 }
             }
