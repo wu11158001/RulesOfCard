@@ -82,7 +82,7 @@ pipeline {
             steps {
                 echo "📦 安全呼叫 Token 並同步至 GitHub..."
                 // 調用剛才設定的 ID，並將其內容放入變數 MY_TOKEN 中
-                withCredentials([string(credentialsId: 'My GitHub Token', variable: 'MY_TOKEN')]) {
+                withCredentials([string(credentialsId: 'github-token', variable: 'MY_TOKEN')]) {
                     script {
                         dir("${EXTERNAL_ASSETS_DIR}") {
                             bat """
