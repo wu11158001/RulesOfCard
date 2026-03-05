@@ -3,7 +3,7 @@
     <ui:VisualElement name="MainRoot" style="flex-grow: 1; color: rgb(0, 0, 0); background-color: rgb(2, 77, 91);">
         <ui:VisualElement name="SelectBox" style="flex-grow: 1; align-self: auto; align-content: center; justify-content: space-evenly; flex-direction: row; align-items: center; color: rgb(0, 0, 0);">
             <ui:Button text="一張牌" name="OneCardBtn" class="ButtonNormal ButtonHover ButtonActive"/>
-            <ui:Button text="三張牌" name="ThreeCardBtn" class="ButtonNormal ButtonHover ButtonActive" style="width: 15%; height: 10%; font-size: 36px; -unity-font-style: bold; border-top-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);"/>
+            <ui:Button text="三張牌" name="ThreeCardBtn" class="ButtonNormal ButtonHover ButtonActive" style="width: 15%; height: 10%; -unity-font-style: bold; border-top-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

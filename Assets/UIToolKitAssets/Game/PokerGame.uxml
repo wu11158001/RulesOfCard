@@ -1,0 +1,28 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIToolkitUss/PokerGameUss.uss?fileID=7433441132597879392&amp;guid=d183d00daa5fb28438ddbfb53ea0b49e&amp;type=3#PokerGameUss"/>
+    <ui:VisualElement name="MainRoot" style="flex-grow: 1; padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%;">
+        <ui:VisualElement name="Bg" style="flex-grow: 0; position: absolute; flex-basis: auto; width: 100%; height: 100%; flex-shrink: 0; background-color: rgb(0, 94, 21); top: 0; left: 0; right: 0; bottom: 0;"/>
+        <ui:VisualElement name="TopBox" style="flex-grow: 0; flex-basis: 35%; flex-direction: row; align-items: flex-start; justify-content: center; flex-shrink: 0; align-content: auto; align-self: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:VisualElement name="StockPanel" class="BasePanel">
+                <ui:VisualElement name="BasePoker" class="BasePoker" style="flex-grow: 0; flex-direction: column; flex-shrink: 0; align-items: stretch; background-image: url(&quot;project://database/Assets/Testures/PokerCards/Deck08.png?fileID=1368704091286611008&amp;guid=fb06f269bfead4a11b13fed95dfa76f7&amp;type=3#Back_D8_1&quot;);">
+                    <ui:Image name="PokerValue" class="BasePoker" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Testures/PokerCards/Deck01.png?fileID=-3502424558361539742&amp;guid=5f0074f1c36da4a71bf1a5e1528a2f35&amp;type=3#Deck01_0&quot;); visibility: visible; width: 100%; height: 100%;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="WastePanel" class="BasePanel" style="border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);"/>
+            <ui:VisualElement name="EmptyPanel" class="BasePanel" style="border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);"/>
+            <ui:VisualElement name="FoundationPanel_0" class="BasePanel" style="border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255);"/>
+            <ui:VisualElement name="FoundationPanel_1" class="BasePanel" style="border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255);"/>
+            <ui:VisualElement name="FoundationPanel_2" class="BasePanel" style="border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255);"/>
+            <ui:VisualElement name="FoundationPanel_3" class="BasePanel" style="border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255);"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="BottomBox" style="flex-grow: 1; flex-direction: row; justify-content: center; align-content: auto; align-items: flex-start; height: auto; flex-shrink: 0;">
+            <ui:VisualElement name="Tableau_0" class="BasePanel" style="flex-grow: 0; height: 250px;"/>
+            <ui:VisualElement name="Tableau_2" class="BasePanel" style="flex-grow: 0; height: 250px;"/>
+            <ui:VisualElement name="Tableau_3" class="BasePanel" style="flex-grow: 0; height: 250px;"/>
+            <ui:VisualElement name="Tableau_4" class="BasePanel" style="flex-grow: 0; height: 250px;"/>
+            <ui:VisualElement name="Tableau_5" class="BasePanel" style="flex-grow: 0; height: 250px;"/>
+            <ui:VisualElement name="Tableau_6" class="BasePanel" style="flex-grow: 0; height: 250px;"/>
+            <ui:VisualElement name="Tableau_1" class="BasePanel" style="flex-grow: 0; height: 250px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

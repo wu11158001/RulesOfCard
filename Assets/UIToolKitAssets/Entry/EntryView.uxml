@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UIToolkitUss/EntryViewUss.uss?fileID=7433441132597879392&amp;guid=7f225e6aa64f12f4883d33e58d560209&amp;type=3#EntryViewUss"/>
-    <ui:VisualElement name="MainRoot" style="flex-grow: 1; background-color: rgb(0, 255, 178); align-self: auto; align-content: center; align-items: center; justify-content: center;">
+    <ui:VisualElement name="MainRoot" style="flex-grow: 1; background-color: rgb(0, 255, 178); align-self: auto; align-content: center; align-items: center; justify-content: center; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme%20SDF.asset?fileID=11400000&amp;guid=a2a57ea7a286c3d4f8741fc3df13e6b1&amp;type=2#UnityDefaultRuntimeTheme SDF&quot;);">
         <ui:Image name="IconImg" source="project://database/Assets/Testures/PokerCards/Deck02.png?fileID=-8015602716496629025&amp;guid=2ee177719f492439ebcf591e83df2d59&amp;type=3#Deck02_0" class="IconImg" style="width: 100%; height: 50%; background-image: none;"/>
-        <ui:Label text="載入中..." name="TipLable" style="font-size: 32px; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=29dd058576b1f1740a989c138946e9e7&amp;type=3#NotInter-Regular&quot;); -unity-font-style: bold;"/>
+        <ui:Label text="載入中..." name="TipLable" style="font-size: 32px; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme%20SDF.asset?fileID=11400000&amp;guid=a2a57ea7a286c3d4f8741fc3df13e6b1&amp;type=2#UnityDefaultRuntimeTheme SDF&quot;); -unity-font-style: bold;"/>
     </ui:VisualElement>
 </ui:UXML>
