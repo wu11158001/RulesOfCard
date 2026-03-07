@@ -15,7 +15,7 @@ public partial class PokerGame
 {
     [SerializeField]
     private UIDocument _document;
-    public Image PokerValue { get; private set; }
+    public Image BasePokerValue { get; private set; }
 
     public VisualElement BasePoker { get; private set; }
 
@@ -35,6 +35,8 @@ public partial class PokerGame
 
     public VisualElement Tableau_0 { get; private set; }
 
+    public VisualElement Tableau_1 { get; private set; }
+
     public VisualElement Tableau_2 { get; private set; }
 
     public VisualElement Tableau_3 { get; private set; }
@@ -44,8 +46,6 @@ public partial class PokerGame
     public VisualElement Tableau_5 { get; private set; }
 
     public VisualElement Tableau_6 { get; private set; }
-
-    public VisualElement Tableau_1 { get; private set; }
 
     public VisualElement Bg { get; private set; }
 
@@ -58,7 +58,7 @@ public partial class PokerGame
     public VisualElement Root => _document?.rootVisualElement;
     public void InitializeDocument()
     {
-        PokerValue = Root?.Q<Image>("PokerValue");
+        BasePokerValue = Root?.Q<Image>("BasePokerValue");
         BasePoker = Root?.Q<VisualElement>("BasePoker");
         StockPanel = Root?.Q<VisualElement>("StockPanel");
         WastePanel = Root?.Q<VisualElement>("WastePanel");
@@ -68,12 +68,12 @@ public partial class PokerGame
         FoundationPanel_2 = Root?.Q<VisualElement>("FoundationPanel_2");
         FoundationPanel_3 = Root?.Q<VisualElement>("FoundationPanel_3");
         Tableau_0 = Root?.Q<VisualElement>("Tableau_0");
+        Tableau_1 = Root?.Q<VisualElement>("Tableau_1");
         Tableau_2 = Root?.Q<VisualElement>("Tableau_2");
         Tableau_3 = Root?.Q<VisualElement>("Tableau_3");
         Tableau_4 = Root?.Q<VisualElement>("Tableau_4");
         Tableau_5 = Root?.Q<VisualElement>("Tableau_5");
         Tableau_6 = Root?.Q<VisualElement>("Tableau_6");
-        Tableau_1 = Root?.Q<VisualElement>("Tableau_1");
         Bg = Root?.Q<VisualElement>("Bg");
         TopBox = Root?.Q<VisualElement>("TopBox");
         BottomBox = Root?.Q<VisualElement>("BottomBox");

@@ -1,15 +1,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using System.Text.RegularExpressions;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 [CreateAssetMenu(fileName = "CardSprites", menuName = "ScriptableObjects/PokerCollection")]
 public class PokerCollection : ScriptableObject
 {
     public List<PokerDeck> PokerDecks;
 
+#if UNITY_EDITOR
     [MenuItem("Tools/Auto Import Poker From Sheets")]
     public static void ImportPokerFromSheets()
     {
@@ -63,14 +67,14 @@ public class PokerCollection : ScriptableObject
         var match = Regex.Match(name, @"\d+");
         return match.Success ? int.Parse(match.Value) : 0;
     }
+#endif
 
     /// <summary>
-    /// 獲取撲克牌牌面資料
+    /// 獲取撲克牌套組資料
     /// </summary>
-    public PokerData GetFrontSprite(PokerStyle pokerStyle, Suit suit, Rank rank)
+    public PokerDeck GetFrontSprite(PokerStyle pokerStyle)
     {
-        List<PokerData> pokerDatas = PokerDecks.Find(deck => deck.PokerStyle == pokerStyle)?.pokerDatas;
-        return pokerDatas.Find(cf => cf.Suit == suit && cf.Rank == rank);
+        return PokerDecks.Find(deck => deck.PokerStyle == pokerStyle);
     }
 }
 
@@ -82,29 +86,29 @@ public class PokerDeck
 {
     public PokerStyle PokerStyle;
     public Sprite BackSprite;
-    public List<PokerData> pokerDatas = new();
+    public List<PokerSkinData> pokerDatas = new();
 
     // 自動生成 52 張牌資料
     public void InitializeDeck()
     {
         pokerDatas.Clear();
-        foreach (Suit s in System.Enum.GetValues(typeof(Suit)))
+        foreach (SuitEnum s in System.Enum.GetValues(typeof(SuitEnum)))
         {
-            foreach (Rank r in System.Enum.GetValues(typeof(Rank)))
+            foreach (RankEnum r in System.Enum.GetValues(typeof(RankEnum)))
             {
-                pokerDatas.Add(new PokerData { Suit = s, Rank = r });
+                pokerDatas.Add(new PokerSkinData { Suit = s, Rank = r });
             }
         }
     }
 }
 
 /// <summary>
-/// 撲克牌牌面資料
+/// 撲克牌皮膚資料
 /// </summary>
 [System.Serializable]
-public class PokerData
+public class PokerSkinData
 {
-    public Suit Suit;
-    public Rank Rank;
+    public SuitEnum Suit;
+    public RankEnum Rank;
     public Sprite FrontSprite;
 }

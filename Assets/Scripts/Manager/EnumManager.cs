@@ -32,7 +32,7 @@ public enum PokerStyle
 /// <summary>
 /// 撲克牌花色
 /// </summary>
-public enum Suit 
+public enum SuitEnum 
 {
     Hearts,
     Clubs, 
@@ -43,7 +43,7 @@ public enum Suit
 /// <summary>
 /// 撲克牌牌面
 /// </summary>
-public enum Rank 
+public enum RankEnum 
 { 
     Ace = 1, 
     Two, 

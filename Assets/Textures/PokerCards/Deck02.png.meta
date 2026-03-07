@@ -514,10 +514,10 @@ TextureImporter:
       name: Deck02_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1798
-        width: 200
-        height: 250
+        x: 15
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,10 +536,10 @@ TextureImporter:
       name: Deck02_1
       rect:
         serializedVersion: 2
-        x: 200
-        y: 1798
-        width: 200
-        height: 250
+        x: 215
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -558,10 +558,10 @@ TextureImporter:
       name: Deck02_2
       rect:
         serializedVersion: 2
-        x: 400
-        y: 1798
-        width: 200
-        height: 250
+        x: 415
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +580,10 @@ TextureImporter:
       name: Deck02_3
       rect:
         serializedVersion: 2
-        x: 600
-        y: 1798
-        width: 200
-        height: 250
+        x: 615
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -602,10 +602,10 @@ TextureImporter:
       name: Deck02_4
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1798
-        width: 200
-        height: 250
+        x: 815
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,10 +624,10 @@ TextureImporter:
       name: Deck02_5
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1798
-        width: 200
-        height: 250
+        x: 1015
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -646,10 +646,10 @@ TextureImporter:
       name: Deck02_6
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1798
-        width: 200
-        height: 250
+        x: 1215
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -668,10 +668,10 @@ TextureImporter:
       name: Deck02_7
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 1798
-        width: 200
-        height: 250
+        x: 1415
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -690,10 +690,10 @@ TextureImporter:
       name: Deck02_8
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1798
-        width: 200
-        height: 250
+        x: 1615
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -712,10 +712,10 @@ TextureImporter:
       name: Deck02_9
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1798
-        width: 200
-        height: 250
+        x: 1815
+        y: 1814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -734,10 +734,10 @@ TextureImporter:
       name: Deck02_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1548
-        width: 200
-        height: 250
+        x: 15
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -756,10 +756,10 @@ TextureImporter:
       name: Deck02_11
       rect:
         serializedVersion: 2
-        x: 200
-        y: 1548
-        width: 200
-        height: 250
+        x: 215
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -778,10 +778,10 @@ TextureImporter:
       name: Deck02_12
       rect:
         serializedVersion: 2
-        x: 400
-        y: 1548
-        width: 200
-        height: 250
+        x: 415
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -797,35 +797,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Back_D2_1
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 1548
-        width: 200
-        height: 250
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44f3f25ef4fd647fd9aceb34d2f70749
-      internalID: 8377660892498022680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Deck02_14
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1548
-        width: 200
-        height: 250
+        x: 815
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -844,10 +822,10 @@ TextureImporter:
       name: Deck02_15
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1548
-        width: 200
-        height: 250
+        x: 1015
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -866,10 +844,10 @@ TextureImporter:
       name: Deck02_16
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1548
-        width: 200
-        height: 250
+        x: 1215
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -888,10 +866,10 @@ TextureImporter:
       name: Deck02_17
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 1548
-        width: 200
-        height: 250
+        x: 1415
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -910,10 +888,10 @@ TextureImporter:
       name: Deck02_18
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1548
-        width: 200
-        height: 250
+        x: 1615
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -932,10 +910,10 @@ TextureImporter:
       name: Deck02_19
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1548
-        width: 200
-        height: 250
+        x: 1815
+        y: 1564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -954,10 +932,10 @@ TextureImporter:
       name: Deck02_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1298
-        width: 200
-        height: 250
+        x: 15
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -976,10 +954,10 @@ TextureImporter:
       name: Deck02_21
       rect:
         serializedVersion: 2
-        x: 200
-        y: 1298
-        width: 200
-        height: 250
+        x: 215
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -998,10 +976,10 @@ TextureImporter:
       name: Deck02_22
       rect:
         serializedVersion: 2
-        x: 400
-        y: 1298
-        width: 200
-        height: 250
+        x: 415
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1020,10 +998,10 @@ TextureImporter:
       name: Deck02_23
       rect:
         serializedVersion: 2
-        x: 600
-        y: 1298
-        width: 200
-        height: 250
+        x: 615
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1042,10 +1020,10 @@ TextureImporter:
       name: Deck02_24
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1298
-        width: 200
-        height: 250
+        x: 815
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1064,10 +1042,10 @@ TextureImporter:
       name: Deck02_25
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1298
-        width: 200
-        height: 250
+        x: 1015
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1086,10 +1064,10 @@ TextureImporter:
       name: Deck02_26
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1298
-        width: 200
-        height: 250
+        x: 1215
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1105,35 +1083,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Back_D2_2
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 1298
-        width: 200
-        height: 250
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a571a16f5030f416eaa2ca8250ebf9fc
-      internalID: -433670666029108566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Deck02_28
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1298
-        width: 200
-        height: 250
+        x: 1615
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1152,10 +1108,10 @@ TextureImporter:
       name: Deck02_29
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1298
-        width: 200
-        height: 250
+        x: 1815
+        y: 1314
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1174,10 +1130,10 @@ TextureImporter:
       name: Deck02_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1048
-        width: 200
-        height: 250
+        x: 15
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1196,10 +1152,10 @@ TextureImporter:
       name: Deck02_31
       rect:
         serializedVersion: 2
-        x: 200
-        y: 1048
-        width: 200
-        height: 250
+        x: 215
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1218,10 +1174,10 @@ TextureImporter:
       name: Deck02_32
       rect:
         serializedVersion: 2
-        x: 400
-        y: 1048
-        width: 200
-        height: 250
+        x: 415
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1240,10 +1196,10 @@ TextureImporter:
       name: Deck02_33
       rect:
         serializedVersion: 2
-        x: 600
-        y: 1048
-        width: 200
-        height: 250
+        x: 615
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1262,10 +1218,10 @@ TextureImporter:
       name: Deck02_34
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1048
-        width: 200
-        height: 250
+        x: 815
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1284,10 +1240,10 @@ TextureImporter:
       name: Deck02_35
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1048
-        width: 200
-        height: 250
+        x: 1015
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1306,10 +1262,10 @@ TextureImporter:
       name: Deck02_36
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1048
-        width: 200
-        height: 250
+        x: 1215
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1328,10 +1284,10 @@ TextureImporter:
       name: Deck02_37
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 1048
-        width: 200
-        height: 250
+        x: 1415
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1350,10 +1306,10 @@ TextureImporter:
       name: Deck02_38
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1048
-        width: 200
-        height: 250
+        x: 1615
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1372,10 +1328,10 @@ TextureImporter:
       name: Deck02_39
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 1048
-        width: 200
-        height: 250
+        x: 1815
+        y: 1064
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1394,10 +1350,10 @@ TextureImporter:
       name: Deck02_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 798
-        width: 200
-        height: 250
+        x: 15
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1413,35 +1369,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Back_D2_3
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 798
-        width: 200
-        height: 250
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 031ff1c4a41114080ad9835231841f26
-      internalID: -8552559865685663976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Deck02_42
       rect:
         serializedVersion: 2
-        x: 400
-        y: 798
-        width: 200
-        height: 250
+        x: 415
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1460,10 +1394,10 @@ TextureImporter:
       name: Deck02_43
       rect:
         serializedVersion: 2
-        x: 600
-        y: 798
-        width: 200
-        height: 250
+        x: 615
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1482,10 +1416,10 @@ TextureImporter:
       name: Deck02_44
       rect:
         serializedVersion: 2
-        x: 800
-        y: 798
-        width: 200
-        height: 250
+        x: 815
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1504,10 +1438,10 @@ TextureImporter:
       name: Deck02_45
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 798
-        width: 200
-        height: 250
+        x: 1015
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1526,10 +1460,10 @@ TextureImporter:
       name: Deck02_46
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 798
-        width: 200
-        height: 250
+        x: 1215
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1548,10 +1482,10 @@ TextureImporter:
       name: Deck02_47
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 798
-        width: 200
-        height: 250
+        x: 1415
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1570,10 +1504,10 @@ TextureImporter:
       name: Deck02_48
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 798
-        width: 200
-        height: 250
+        x: 1615
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1592,10 +1526,10 @@ TextureImporter:
       name: Deck02_49
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 798
-        width: 200
-        height: 250
+        x: 1815
+        y: 814
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1614,10 +1548,10 @@ TextureImporter:
       name: Deck02_50
       rect:
         serializedVersion: 2
-        x: 0
-        y: 548
-        width: 200
-        height: 250
+        x: 15
+        y: 564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1636,10 +1570,10 @@ TextureImporter:
       name: Deck02_51
       rect:
         serializedVersion: 2
-        x: 200
-        y: 548
-        width: 200
-        height: 250
+        x: 215
+        y: 564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1658,10 +1592,10 @@ TextureImporter:
       name: Deck02_52
       rect:
         serializedVersion: 2
-        x: 400
-        y: 548
-        width: 200
-        height: 250
+        x: 415
+        y: 564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1680,10 +1614,10 @@ TextureImporter:
       name: Deck02_53
       rect:
         serializedVersion: 2
-        x: 600
-        y: 548
-        width: 200
-        height: 250
+        x: 615
+        y: 564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1702,10 +1636,10 @@ TextureImporter:
       name: Deck02_54
       rect:
         serializedVersion: 2
-        x: 800
-        y: 548
-        width: 200
-        height: 250
+        x: 815
+        y: 564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1721,35 +1655,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Back_D2_4
+      name: Back_D3_Joker
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 548
-        width: 200
-        height: 250
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef5aa6013cd954f7b9211e3e3446384f
-      internalID: 6850071573383382763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Deck02_56
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 548
-        width: 200
-        height: 250
+        x: 1215
+        y: 564
+        width: 170
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1760,6 +1672,94 @@ TextureImporter:
       bones: []
       spriteID: dc2c617b9ca3d468badc380763576e62
       internalID: -8223463856721717213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back_D2_1
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 1564
+        width: 170
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31554c4a4d5b9f349adf3c6b8ef7518b
+      internalID: -514513026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back_D2_2
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 1314
+        width: 170
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e507e50d8c0454ea37d9923fa0a91c
+      internalID: -876213674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back_D2_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 814
+        width: 170
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94accc8d9c652fa4d9f0d92661044f80
+      internalID: 1080771979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back_D2_4
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 564
+        width: 170
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d34ac5950797a4190d4833643b4f51
+      internalID: -438514786
       vertices: []
       indices: 
       edges: []
@@ -1776,12 +1776,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Back_D2_1: 8377660892498022680
-      Back_D2_2: -433670666029108566
-      Back_D2_3: -8552559865685663976
-      Back_D2_4: 6850071573383382763
+      Back_D2_1: -514513026
+      Back_D2_2: -876213674
+      Back_D2_3: 1080771979
+      Back_D2_4: -438514786
+      Back_D3_Joker: -8223463856721717213
       Deck02_0: -8015602716496629025
       Deck02_1: 1543271524466354264
       Deck02_10: -7197886455468503514
@@ -1830,7 +1833,6 @@ TextureImporter:
       Deck02_52: -1441224199907959489
       Deck02_53: 5358601097194354281
       Deck02_54: 2620435828420200675
-      Deck02_56: -8223463856721717213
       Deck02_6: 7772293743256464837
       Deck02_7: 7373316886589443600
       Deck02_8: 5087696280894743015
