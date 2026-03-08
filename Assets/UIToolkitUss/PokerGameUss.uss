@@ -3,10 +3,10 @@
 
 .base-box {
     flex-grow: 0;
-    flex-basis: 22%;
+    flex-basis: auto;
     flex-direction: row;
     align-items: stretch;
-    justify-content: center;
+    justify-content: space-between;
     flex-shrink: 0;
     align-content: auto;
     align-self: center;
@@ -16,16 +16,19 @@
     padding-left: 0;
     width: 90%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 3%;
+    min-height: auto;
+    max-height: none;
+    aspect-ratio: auto;
 }
 
 .base-panel {
     flex-basis: 10%;
     background-color: rgba(255, 255, 255, 0);
-    border-top-left-radius: 11px;
-    border-top-right-radius: 11px;
-    border-bottom-right-radius: 11px;
-    border-bottom-left-radius: 11px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     border-top-width: 1px;
     border-right-width: 1px;
     border-bottom-width: 1px;
@@ -39,17 +42,18 @@
     padding-bottom: 0;
     padding-left: 0;
     margin-top: 0;
-    margin-right: 15px;
+    margin-right: 0;
     margin-bottom: 0;
-    margin-left: 15px;
+    margin-left: 0;
     flex-shrink: 1;
     align-items: center;
     justify-content: center;
     align-content: center;
     align-self: center;
-    height: 90%;
+    height: auto;
     width: auto;
     flex-grow: 0;
+    aspect-ratio: 0.8;
 }
 
 .base-poker {
@@ -92,6 +96,8 @@
     border-right-color: rgb(185, 185, 185);
     border-top-color: rgb(185, 185, 185);
     border-bottom-color: rgb(185, 185, 185);
+    aspect-ratio: auto;
+    flex-basis: 10%;
 }
 
 .base-poker-value {
@@ -101,18 +107,18 @@
     width: 100%;
     height: 100%;
     display: flex;
-    border-top-width: 3px;
-    border-right-width: 3px;
-    border-bottom-width: 3px;
-    border-left-width: 3px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
     border-left-color: rgb(185, 185, 185);
     border-right-color: rgb(185, 185, 185);
     border-top-color: rgb(185, 185, 185);
     border-bottom-color: rgb(185, 185, 185);
-    border-top-left-radius: 11px;
-    border-top-right-radius: 11px;
-    border-bottom-right-radius: 11px;
-    border-bottom-left-radius: 11px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 0;
