@@ -41,6 +41,15 @@ public enum SuitEnum
 }
 
 /// <summary>
+/// 撲克牌花色顏色
+/// </summary>
+public enum SuitColorEnum
+{
+    Red,
+    Black,
+}
+
+/// <summary>
 /// 撲克牌牌面
 /// </summary>
 public enum RankEnum 

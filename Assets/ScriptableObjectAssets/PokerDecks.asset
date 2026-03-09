@@ -16,636 +16,844 @@ MonoBehaviour:
   - PokerStyle: 0
     BackSprite: {fileID: 1842537641911522891, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
     pokerDatas:
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 1
       FrontSprite: {fileID: -3502424558361539742, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 2
       FrontSprite: {fileID: 3965424811811440438, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 3
       FrontSprite: {fileID: 7399187136890584348, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 4
       FrontSprite: {fileID: -288016928367226910, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 5
       FrontSprite: {fileID: -2612515303787601930, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 6
       FrontSprite: {fileID: -7833615369865891870, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 7
       FrontSprite: {fileID: 7377750055599407878, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 8
       FrontSprite: {fileID: 1546025614686319068, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 9
       FrontSprite: {fileID: -9180482913087526763, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 10
       FrontSprite: {fileID: -3260350533219176807, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 11
       FrontSprite: {fileID: -1653327901173135069, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 12
       FrontSprite: {fileID: 5827190069618263385, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 13
       FrontSprite: {fileID: 8446585319258339084, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 1
       FrontSprite: {fileID: -5297692839718645536, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 2
       FrontSprite: {fileID: -2380123108746461297, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 3
       FrontSprite: {fileID: 1388479102146019423, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 4
       FrontSprite: {fileID: -3527102269004665432, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 5
       FrontSprite: {fileID: 1429843762554101912, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 6
       FrontSprite: {fileID: 4720260127249971148, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 7
       FrontSprite: {fileID: 6193320949665264649, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 8
       FrontSprite: {fileID: -1429224361115236405, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 9
       FrontSprite: {fileID: -4835812078407406434, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 10
       FrontSprite: {fileID: 5910543315337943415, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 11
       FrontSprite: {fileID: 1509981241815906335, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 12
       FrontSprite: {fileID: -7235343201046362658, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 13
       FrontSprite: {fileID: 1758922097055270408, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 1
       FrontSprite: {fileID: 3068887291422783032, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 2
       FrontSprite: {fileID: -5766376909285929114, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 3
       FrontSprite: {fileID: 3933521219405346922, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 4
       FrontSprite: {fileID: -4713607207595073260, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 5
       FrontSprite: {fileID: 551631985778308836, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 6
       FrontSprite: {fileID: 1919388913275121978, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 7
       FrontSprite: {fileID: -1602496090531772219, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 8
       FrontSprite: {fileID: 8059645863219447726, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 9
       FrontSprite: {fileID: 2741348623263493724, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 10
       FrontSprite: {fileID: -4920297041595071129, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 11
       FrontSprite: {fileID: -3181766010911794911, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 12
       FrontSprite: {fileID: -2038757103190822604, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 13
       FrontSprite: {fileID: -4601399858215464021, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 1
       FrontSprite: {fileID: -7502329690989343480, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 2
       FrontSprite: {fileID: 60214442908026797, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 3
       FrontSprite: {fileID: 2564422515123892514, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 4
       FrontSprite: {fileID: -144767670950278208, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 5
       FrontSprite: {fileID: 6737017595884545002, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 6
       FrontSprite: {fileID: 7482122051947691522, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 7
       FrontSprite: {fileID: 5246974436267161256, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 8
       FrontSprite: {fileID: 8689962068862552565, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 9
       FrontSprite: {fileID: 8381711991927941154, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 10
       FrontSprite: {fileID: -4344796705275831136, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 11
       FrontSprite: {fileID: -6800584922860337952, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 12
       FrontSprite: {fileID: 5892981510886920187, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 13
       FrontSprite: {fileID: 9136615021833677593, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
   - PokerStyle: 1
     BackSprite: {fileID: -8223463856721717213, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
     pokerDatas:
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 1
       FrontSprite: {fileID: -8015602716496629025, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 2
       FrontSprite: {fileID: 1543271524466354264, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 3
       FrontSprite: {fileID: 16512171712424767, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 4
       FrontSprite: {fileID: -1899854459020071359, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 5
       FrontSprite: {fileID: 1004799789455987659, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 6
       FrontSprite: {fileID: 1408526355837041803, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 7
       FrontSprite: {fileID: 7772293743256464837, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 8
       FrontSprite: {fileID: 7373316886589443600, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 9
       FrontSprite: {fileID: 5087696280894743015, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 10
       FrontSprite: {fileID: 3406148438248016451, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 11
       FrontSprite: {fileID: -7197886455468503514, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 12
       FrontSprite: {fileID: -3310820820360713607, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 13
       FrontSprite: {fileID: 3938159137638058159, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 1
       FrontSprite: {fileID: 5362812241179954904, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 2
       FrontSprite: {fileID: 6482534295727591972, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 3
       FrontSprite: {fileID: -2574929349390834253, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 4
       FrontSprite: {fileID: -19858119321078237, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 5
       FrontSprite: {fileID: 5332306843133913856, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 6
       FrontSprite: {fileID: -8055256389614355142, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 7
       FrontSprite: {fileID: 316718133330025967, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 8
       FrontSprite: {fileID: -2368429640310727612, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 9
       FrontSprite: {fileID: -9120984682127385225, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 10
       FrontSprite: {fileID: 3915234255916429425, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 11
       FrontSprite: {fileID: -1509962872242152275, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 12
       FrontSprite: {fileID: -5336126241793553272, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 13
       FrontSprite: {fileID: -9023041482954960014, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 1
       FrontSprite: {fileID: 1238373968832607136, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 2
       FrontSprite: {fileID: -3364252963478235582, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 3
       FrontSprite: {fileID: -5315407251172718837, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 4
       FrontSprite: {fileID: 5844252051249276162, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 5
       FrontSprite: {fileID: -4693229376433642301, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 6
       FrontSprite: {fileID: 7653361487732526597, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 7
       FrontSprite: {fileID: -4002422638983080473, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 8
       FrontSprite: {fileID: 1030663210840847766, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 9
       FrontSprite: {fileID: 563064050885566589, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 10
       FrontSprite: {fileID: 5162319668047967537, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 11
       FrontSprite: {fileID: -4615463202923517574, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 12
       FrontSprite: {fileID: -6861387176726406227, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 13
       FrontSprite: {fileID: 6437866838887046682, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 1
       FrontSprite: {fileID: -467872590796705546, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 2
       FrontSprite: {fileID: -4120126131310695895, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 3
       FrontSprite: {fileID: 3927545055032276733, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 4
       FrontSprite: {fileID: 2272901471365635516, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 5
       FrontSprite: {fileID: -1080871696032500350, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 6
       FrontSprite: {fileID: 3110376122290022186, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 7
       FrontSprite: {fileID: -5865499541247452425, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 8
       FrontSprite: {fileID: 3961510865622030163, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 9
       FrontSprite: {fileID: -2510955049437243680, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 10
       FrontSprite: {fileID: -4825729078125685570, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 11
       FrontSprite: {fileID: -1441224199907959489, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 12
       FrontSprite: {fileID: 5358601097194354281, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 13
       FrontSprite: {fileID: 2620435828420200675, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
   - PokerStyle: 2
     BackSprite: {fileID: -1147769134460891000, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
     pokerDatas:
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 1
       FrontSprite: {fileID: -248163411044737036, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 2
       FrontSprite: {fileID: -8388297159259430861, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 3
       FrontSprite: {fileID: -4136588564518532863, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 4
       FrontSprite: {fileID: 7966142955004231077, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 5
       FrontSprite: {fileID: -4586348883436152362, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 6
       FrontSprite: {fileID: 4159303586659730817, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 7
       FrontSprite: {fileID: -4337611301783037472, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 8
       FrontSprite: {fileID: 1353806747658159541, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 9
       FrontSprite: {fileID: -3375432287373866755, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 10
       FrontSprite: {fileID: 1523323324916997767, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 11
       FrontSprite: {fileID: 6240846926898504729, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 12
       FrontSprite: {fileID: -2561314669329672798, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 13
       FrontSprite: {fileID: -6508787336515703863, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 1
       FrontSprite: {fileID: 1132349348501367820, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 2
       FrontSprite: {fileID: 7364538937815001778, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 3
       FrontSprite: {fileID: -1209290193045520075, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 4
       FrontSprite: {fileID: -1785273515690697468, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 5
       FrontSprite: {fileID: -2163201636467455589, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 6
       FrontSprite: {fileID: 8384971727908437161, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 7
       FrontSprite: {fileID: -5441985670822901283, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 8
       FrontSprite: {fileID: 8305713989822080643, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 9
       FrontSprite: {fileID: 7269525460383157208, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 10
       FrontSprite: {fileID: 3451740339496770929, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 11
       FrontSprite: {fileID: 4502232438098026527, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 12
       FrontSprite: {fileID: 8505596367067665007, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 13
       FrontSprite: {fileID: 1199121017138907823, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 1
       FrontSprite: {fileID: 7385672595265252066, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 2
       FrontSprite: {fileID: -3605001629646680699, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 3
       FrontSprite: {fileID: -3371594972757235049, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 4
       FrontSprite: {fileID: 1273716672224414348, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 5
       FrontSprite: {fileID: 4542914171862288915, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 6
       FrontSprite: {fileID: 7004199052526274276, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 7
       FrontSprite: {fileID: -7376877693395504935, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 8
       FrontSprite: {fileID: -2917557383726815628, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 9
       FrontSprite: {fileID: 6891206641553040096, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 10
       FrontSprite: {fileID: -8310031735075773488, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 11
       FrontSprite: {fileID: -4148517152779584379, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 12
       FrontSprite: {fileID: -1329225355053456660, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 13
       FrontSprite: {fileID: -7896502043822828257, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 1
       FrontSprite: {fileID: -8146127497804215959, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 2
       FrontSprite: {fileID: 3909660632554091299, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 3
       FrontSprite: {fileID: -2185163192419288420, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 4
       FrontSprite: {fileID: 822689329828132892, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 5
       FrontSprite: {fileID: -2777848423334840669, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 6
       FrontSprite: {fileID: -797113405960263138, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 7
       FrontSprite: {fileID: -1550256309155564101, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 8
       FrontSprite: {fileID: 1119334387449268624, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 9
       FrontSprite: {fileID: -8892186459154018398, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 10
       FrontSprite: {fileID: -18998224486529837, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 11
       FrontSprite: {fileID: 1461220244843934049, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 12
       FrontSprite: {fileID: -5335794195529400420, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 13
       FrontSprite: {fileID: 8500606045473636976, guid: a4b4d2618ac8c41b2969ae73399541c6, type: 3}
   - PokerStyle: 3
     BackSprite: {fileID: -3704268729662494578, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
     pokerDatas:
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 1
       FrontSprite: {fileID: -5726712806383344964, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 2
       FrontSprite: {fileID: -3250016260679370238, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 3
       FrontSprite: {fileID: -5155763443626542681, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 4
       FrontSprite: {fileID: -7628145216040114745, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 5
       FrontSprite: {fileID: -7949040512198993836, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 6
       FrontSprite: {fileID: -1371162284162279435, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 7
       FrontSprite: {fileID: -1375438132264213541, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 8
       FrontSprite: {fileID: 6162712646781341140, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 9
       FrontSprite: {fileID: 5945614531890900741, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 10
       FrontSprite: {fileID: 5604500674867207301, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 11
       FrontSprite: {fileID: -8860776167320091503, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 12
       FrontSprite: {fileID: 7296753207824812371, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 0
+    - SuitColor: 0
+      Suit: 0
       Rank: 13
       FrontSprite: {fileID: -5178378387321858837, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 1
       FrontSprite: {fileID: 6913947719027067742, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 2
       FrontSprite: {fileID: -4960938912916174971, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 3
       FrontSprite: {fileID: 4192911214220516679, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 4
       FrontSprite: {fileID: 2588292274186994382, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 5
       FrontSprite: {fileID: -3647552086220824374, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 6
       FrontSprite: {fileID: 5205190519284846782, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 7
       FrontSprite: {fileID: -8804398683781666376, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 8
       FrontSprite: {fileID: 9120285255105747474, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 9
       FrontSprite: {fileID: -7792822352315603455, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 10
       FrontSprite: {fileID: -2428155121561966656, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 11
       FrontSprite: {fileID: 1551236659695884942, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 12
       FrontSprite: {fileID: 7182780712419570234, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 1
+    - SuitColor: 1
+      Suit: 1
       Rank: 13
       FrontSprite: {fileID: -6822022458109094629, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 1
       FrontSprite: {fileID: -6196279777240048291, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 2
       FrontSprite: {fileID: 3303494135568170801, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 3
       FrontSprite: {fileID: 2305752470226866179, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 4
       FrontSprite: {fileID: -7282511069678981946, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 5
       FrontSprite: {fileID: -7224432752109350008, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 6
       FrontSprite: {fileID: -7286882596965795404, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 7
       FrontSprite: {fileID: 3437250295014351073, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 8
       FrontSprite: {fileID: 3503354393475338385, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 9
       FrontSprite: {fileID: 4139980750040895759, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 10
       FrontSprite: {fileID: -525160939605335777, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 11
       FrontSprite: {fileID: -9003133964212805266, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 12
       FrontSprite: {fileID: 5621674635712548349, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 2
+    - SuitColor: 0
+      Suit: 2
       Rank: 13
       FrontSprite: {fileID: -1128664219017571344, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 1
       FrontSprite: {fileID: 1647313503815443191, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 2
       FrontSprite: {fileID: 8513486437991184473, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 3
       FrontSprite: {fileID: 5734045639946719284, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 4
       FrontSprite: {fileID: 5168849963222096893, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 5
       FrontSprite: {fileID: 6798242267183179223, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 6
       FrontSprite: {fileID: -6987422235583661203, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 7
       FrontSprite: {fileID: 320108333330294233, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 8
       FrontSprite: {fileID: -8177634999664100935, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 9
       FrontSprite: {fileID: 5150217687043021973, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 10
       FrontSprite: {fileID: 58861371156047844, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 11
       FrontSprite: {fileID: -4971322932291384251, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 12
       FrontSprite: {fileID: -3441656118060179596, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}
-    - Suit: 3
+    - SuitColor: 1
+      Suit: 3
       Rank: 13
       FrontSprite: {fileID: -4694483559476460043, guid: 3caa760a4844d48edaf74ce976c2498f, type: 3}

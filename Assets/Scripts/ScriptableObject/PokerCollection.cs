@@ -96,7 +96,8 @@ public class PokerDeck
         {
             foreach (RankEnum r in System.Enum.GetValues(typeof(RankEnum)))
             {
-                pokerDatas.Add(new PokerSkinData { Suit = s, Rank = r });
+                SuitColorEnum sc = s == SuitEnum.Hearts || s == SuitEnum.Diamonds ? SuitColorEnum.Red : SuitColorEnum.Black;
+                pokerDatas.Add(new PokerSkinData { Suit = s, Rank = r, SuitColor = sc });
             }
         }
     }
@@ -108,6 +109,7 @@ public class PokerDeck
 [System.Serializable]
 public class PokerSkinData
 {
+    public SuitColorEnum SuitColor;
     public SuitEnum Suit;
     public RankEnum Rank;
     public Sprite FrontSprite;

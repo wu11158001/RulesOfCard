@@ -10,16 +10,14 @@
     flex-shrink: 0;
     align-content: auto;
     align-self: center;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
     width: 90%;
     height: auto;
-    margin-bottom: 3%;
     min-height: auto;
     max-height: none;
     aspect-ratio: auto;
+    top: 0%;
+    left: 0%;
+    right: 0%;
 }
 
 .base-panel {
@@ -48,8 +46,8 @@
     flex-shrink: 1;
     align-items: center;
     justify-content: center;
-    align-content: center;
-    align-self: center;
+    align-content: auto;
+    align-self: auto;
     height: auto;
     width: auto;
     flex-grow: 0;

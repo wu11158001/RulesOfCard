@@ -8,26 +8,27 @@ public partial class PokerGame : MonoBehaviour
 {
     [SerializeField] PokerCollection pokerCollection;
 
-    // 拖曳撲克牌
-    private VisualElement OriginalParent;
-    private Vector2 StartMousePos;
-    private Vector2 StartElementPos;
-    private bool IsDragging = false;
-    private Vector2 ClickOffset;
+    VisualElement[] TableauPanels;
+    VisualElement[] FoundationPanels;
 
     private readonly Vector2 StockAdd = new(-1, -1);
-    private const float ColumnAddY = -40;
-
-    private class PokerData
-    {
-        public SuitEnum Suit;
-        public RankEnum Rank;
-    }
+    private const float ColumnAddY = 40;
 
     private void Start()
     {
         InitializeDocument();
 
+        TableauPanels = new VisualElement[]
+        {
+            Tableau_0, Tableau_1, Tableau_2, Tableau_3, Tableau_4, Tableau_5, Tableau_6
+        };
+
+        FoundationPanels = new VisualElement[]
+        {
+            FoundationPanel_0, FoundationPanel_1, FoundationPanel_2, FoundationPanel_3
+        };
+
+        DragBox.pickingMode = PickingMode.Ignore;
         StockPanel.RegisterCallback<ClickEvent>(OnStockClick);
 
         CreateStockPokers();
@@ -44,23 +45,19 @@ public partial class PokerGame : MonoBehaviour
         PokerStyle pokerStyle = PokerStyle.Deck01;
 
         // 產生牌資料
-        List<PokerData> pokerDatas = new();
+        List<PokerSkinData> pokerDatas = new();
         foreach (SuitEnum suit in Enum.GetValues(typeof(SuitEnum)))
         {
             foreach (RankEnum rank in Enum.GetValues(typeof(RankEnum)))
             {
-                PokerData pokerData = new() { Suit = suit, Rank = rank};
+
+                PokerSkinData pokerData = new() { Suit = suit, Rank = rank };
                 pokerDatas.Add(pokerData);
             }
         }
         pokerDatas.Shuffle();
 
         // 產生牌
-        VisualElement[] tableauPanel = new VisualElement[]
-        {
-            Tableau_0, Tableau_1, Tableau_2, Tableau_3, Tableau_4, Tableau_5, Tableau_6
-        };
-
         int tableauIndex = 0;
         int tableauClumnIndex = 0;
         int stockIndex = 0;
@@ -74,7 +71,6 @@ public partial class PokerGame : MonoBehaviour
             VisualElement backCard = new();
             backCard.name = $"{pokerSkinData.Suit}_{pokerSkinData.Rank}";
             backCard.AddToClassList("base-poker");
-
             backCard.style.backgroundImage = new StyleBackground(pokerDeck.BackSprite);
 
             // 正面
@@ -82,19 +78,30 @@ public partial class PokerGame : MonoBehaviour
             frontCard.name = "FrontCard";
             frontCard.AddToClassList("base-poker-value");
             frontCard.style.backgroundImage = new StyleBackground(pokerSkinData.FrontSprite);
-            
+
+            CardDataContainer cardDataContainer = new (
+                data: pokerSkinData, 
+                card: backCard, 
+                dragPanel: DragPanel, 
+                checkDropTarget: CheckDropTarget);
+
+            frontCard.userData = cardDataContainer;
+
             backCard.Add(frontCard);
 
-            if(tableauIndex < tableauPanel.Length)
+            if(tableauIndex < TableauPanels.Length)
             {
                 // 操作區域初始牌
 
-                backCard.style.bottom = ColumnAddY * tableauClumnIndex;
+                backCard.style.top = ColumnAddY * tableauClumnIndex;
 
                 if (tableauClumnIndex == tableauIndex)
                 {
                     frontCard.style.visibility = Visibility.Visible;
                     backCard.style.visibility = Visibility.Hidden;
+
+                    CardDataContainer data = frontCard.userData as CardDataContainer;
+                    data.BindEvents();
                 }
                 else
                 {
@@ -102,7 +109,7 @@ public partial class PokerGame : MonoBehaviour
                     backCard.style.visibility = Visibility.Visible;
                 }
 
-                tableauPanel[tableauIndex].Add(backCard);
+                TableauPanels[tableauIndex].Add(backCard);
 
                 if(tableauClumnIndex == tableauIndex)
                 {
@@ -136,6 +143,8 @@ public partial class PokerGame : MonoBehaviour
     /// </summary>
     private void OnStockClick(ClickEvent evt)
     {
+        CardDataContainer data = null;
+
         // 重製牌堆
         if (StockPanel.childCount == 0)
         {
@@ -151,12 +160,15 @@ public partial class PokerGame : MonoBehaviour
                 VisualElement frontCard = card.Q<VisualElement>("FrontCard");
                 if (frontCard != null)
                 {
+                    frontCard.pickingMode = PickingMode.Position;
                     frontCard.style.visibility = Visibility.Hidden;
                 }
 
                 card.style.left = StockAdd.x * stockIndex;
                 card.style.top = StockAdd.y * stockIndex;
 
+                data = frontCard.userData as CardDataContainer;
+                data.UnbindEvents();
                 StockPanel.Add(card);
 
                 stockIndex++;
@@ -184,70 +196,10 @@ public partial class PokerGame : MonoBehaviour
             front.style.visibility = Visibility.Visible;
         }
 
-        DragPoker(topCard);
+        data = front.userData as CardDataContainer;
+        data.BindEvents();
+
         WastePanel.Add(topCard);
-    }
-
-    /// <summary>
-    /// 拖曳撲克牌
-    /// </summary>
-    private void DragPoker(VisualElement card)
-    {
-        card.RegisterCallback<PointerDownEvent>(evt =>
-        {
-            OriginalParent = card.parent;
-            IsDragging = true;
-            StartMousePos = evt.position;
-
-            // 1. 獲取卡牌當前在視窗中的世界座標
-            Vector2 worldPos = card.worldBound.position;
-
-            // 2. 將世界座標轉換為 DragPanel 內部的相對座標
-            Vector2 localPos = DragPanel.WorldToLocal(worldPos);
-
-            Vector2 cardLocalPos = card.WorldToLocal(evt.position);
-            ClickOffset = cardLocalPos;
-
-            // 3. 設定卡牌的樣式，改為絕對定位 (Position: Absolute)
-            // 這樣它才能脫離原本的 Flex 佈局自由移動
-            card.style.position = Position.Absolute;
-            card.style.left = localPos.x;
-            card.style.top = localPos.y;
-
-            // 4. 移動到 DragPanel
-            DragPanel.Add(card);
-
-            card.pickingMode = PickingMode.Ignore;
-            card.CapturePointer(evt.pointerId);
-            evt.StopPropagation();
-        });
-
-        card.RegisterCallback<PointerMoveEvent>(evt =>
-        {
-            if (!IsDragging || !card.HasPointerCapture(evt.pointerId)) return;
-
-            // 1. 將當前滑鼠的絕對位置轉換為 DragPanel 的本地座標
-            // 這一步能確保座標基準永遠是正確的
-            Vector2 localMousePos = DragPanel.WorldToLocal(evt.position);
-
-            // 2. 減去原本點擊時的偏移量 (Offset)
-            // 這樣卡牌就不會瞬間跳到滑鼠左上角，而是保持你當初點擊的位置
-            card.style.left = localMousePos.x - ClickOffset.x;
-            card.style.top = localMousePos.y - ClickOffset.y;
-
-            evt.StopPropagation();
-        });
-
-        card.RegisterCallback<PointerUpEvent>(evt =>
-        {
-            if (!IsDragging || !card.HasPointerCapture(evt.pointerId)) return;
-
-            IsDragging = false;
-            card.ReleasePointer(evt.pointerId);
-            card.pickingMode = PickingMode.Position;
-
-            CheckDropTarget(card);
-        });
     }
 
     /// <summary>
@@ -255,11 +207,74 @@ public partial class PokerGame : MonoBehaviour
     /// </summary>
     private void CheckDropTarget(VisualElement card)
     {
+        card.pickingMode = PickingMode.Ignore;
+        VisualElement cardFront = card.Q<VisualElement>("FrontCard");
+        CardDataContainer cardPokerData = cardFront.userData as CardDataContainer;
+
         // 取得滑鼠放開位置下方的元素
         VisualElement target = Root.panel.Pick(card.worldBound.center);
+        CardDataContainer targetPokerData = target?.userData != null ? target?.userData as CardDataContainer : null;
 
-        OriginalParent.Add(card);
-        card.style.left = StartElementPos.x;
-        card.style.top = StartElementPos.y;
+        if (FoundationPanels.Contains(target) && cardPokerData.SkinData.Rank == RankEnum.Ace)
+        {
+            // 放置在結算區 && 結算區未有牌
+
+            target.Add(card);
+            card.style.left = 0;
+            card.style.top = 0;
+        }
+        else if(targetPokerData != null && (int)targetPokerData.SkinData.Rank == (int)cardPokerData.SkinData.Rank - 1)
+        {
+            // 放置在其他牌
+
+            bool isTop = TopBox.Contains(target);
+            bool isBottom = BottomBox.Contains(target);
+
+            if (isBottom)
+            {
+                // 目標在待結算區
+
+                VisualElement tableauPanel = null;
+                foreach (var tableau in TableauPanels)
+                {
+                    if(tableau.Contains(target))
+                    {
+                        tableauPanel = tableau;
+                        break;
+                    }
+                }
+
+                if (cardPokerData.SkinData.SuitColor != targetPokerData.SkinData.SuitColor)
+                {
+                    if (tableauPanel != null && target.parent == tableauPanel.Children().Last())
+                    {
+                        tableauPanel.Add(card);
+                        card.style.left = 0;
+                        card.style.top = target.parent.resolvedStyle.top + ColumnAddY;
+                    }
+                    else
+                    {
+                        // 沒碰到任何結算區，返回原位
+                        cardPokerData.GoBack();
+                    }
+                }
+                else
+                {
+                    cardPokerData.GoBack();
+                }
+            }
+            else
+            {
+                cardPokerData.GoBack();
+            }
+        }
+        else
+        {
+            cardPokerData.GoBack();
+        }
+
+        // 重製事件處理
+        card.pickingMode = PickingMode.Position;
+        cardFront.pickingMode = PickingMode.Position;
     }
 }
