@@ -2,8 +2,8 @@
 }
 
 .ButtonNormal {
-    width: 15%;
-    height: 10%;
+    width: 20%;
+    height: 40%;
     -unity-slice-type: sliced;
     transition-property: all;
     transition-duration: 0s;
@@ -16,7 +16,6 @@
     display: flex;
     visibility: visible;
     overflow: visible;
-    font-size: 200%;
     -unity-font-style: bold;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -30,15 +29,16 @@
     border-left-width: 5px;
     border-right-width: 5px;
     border-top-width: 5px;
-    -unity-text-outline-width: 1px;
+    -unity-text-outline-width: 0.5px;
     text-shadow: 0 0 0 rgb(255, 255, 255);
     letter-spacing: 0;
-    background-color: rgb(0, 255, 255);
-    -unity-text-outline-color: rgb(200, 200, 200);
-    color: rgb(89, 48, 0);
+    background-color: rgb(253, 195, 106);
+    -unity-text-outline-color: rgb(255, 171, 28);
+    color: rgb(128, 83, 13);
     text-overflow: clip;
     white-space: pre;
     -unity-text-align: middle-center;
+    font-size: 45px;
 }
 
 .ButtonHover:hover {
@@ -48,10 +48,10 @@
     border-top-color: rgb(0, 0, 0);
     border-bottom-color: rgb(0, 0, 0);
     -unity-background-image-tint-color: rgb(255, 255, 255);
-    color: rgb(209, 209, 209);
+    color: rgb(236, 168, 37);
     -unity-text-outline-width: 2px;
-    -unity-text-outline-color: rgb(19, 19, 19);
-    font-size: 200%;
+    -unity-text-outline-color: rgb(58, 38, 4);
+    font-size: 45px;
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
     -unity-font-style: bold;
     -unity-text-align: middle-center;
@@ -61,5 +61,46 @@
 
 .ButtonActive:active {
     scale: 1 1;
-    font-size: 200%;
+    font-size: 45px;
+    color: rgb(128, 83, 13);
+    -unity-text-outline-width: 0.5px;
+    -unity-text-outline-color: rgb(255, 171, 28);
+}
+
+
+
+
+
+#CardToggleGroup #unity-toggle-button-group__container {
+    flex-grow: 1;
+    align-items: flex-end;
+    align-self: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-basis: auto;
+    height: 100%;
+}
+
+.CardBtnNormal {
+    flex-basis: 17%;
+    flex-grow: 0;
+    height: auto;
+    aspect-ratio: 0.8;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-image: url("project://database/Assets/Textures/PokerCards/Deck01.png?fileID=1842537641911522891&guid=5f0074f1c36da4a71bf1a5e1528a2f35&type=3#Back_D1_1");
+    background-color: rgb(255, 255, 255);
+}
+
+.CardBtnChecked:checked {
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-left-color: rgb(83, 255, 0);
+    border-right-color: rgb(83, 255, 0);
+    border-top-color: rgb(83, 255, 0);
+    border-bottom-color: rgb(83, 255, 0);
 }

@@ -12,6 +12,8 @@ public enum SceneEnum
 public enum ViewEnum
 {
     SelectModeView,
+    PokerGame,
+    WinView,
 }
 
 /// <summary>

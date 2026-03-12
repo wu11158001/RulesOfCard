@@ -38,7 +38,7 @@ public class PokerCollection : ScriptableObject
             // 抓取所有 Sprite 並進行「自然排序」
             List<Sprite> sprites = AssetDatabase.LoadAllAssetsAtPath(path)
                 .OfType<Sprite>()
-                .Where(s => !s.name.Contains("Back"))
+                .Where(s => !s.name.Contains("Back") && !s.name.Contains("Joker"))
                 .OrderBy(s => ExtractNumber(s.name)) // 使用自訂的數字提取函數排序
                 .ToList();
 

@@ -225,7 +225,7 @@ MonoBehaviour:
       Rank: 13
       FrontSprite: {fileID: 9136615021833677593, guid: 5f0074f1c36da4a71bf1a5e1528a2f35, type: 3}
   - PokerStyle: 1
-    BackSprite: {fileID: -8223463856721717213, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
+    BackSprite: {fileID: -514513026, guid: 2ee177719f492439ebcf591e83df2d59, type: 3}
     pokerDatas:
     - SuitColor: 0
       Suit: 0

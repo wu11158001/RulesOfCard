@@ -15,20 +15,35 @@ public partial class SelectModeView
 {
     [SerializeField]
     private UIDocument _document;
+    public Button StyleBtn_0 { get; private set; }
+
+    public Button StyleBtn_1 { get; private set; }
+
+    public Button StyleBtn_2 { get; private set; }
+
+    public Button StyleBtn_3 { get; private set; }
+
     public Button OneCardBtn { get; private set; }
 
     public Button ThreeCardBtn { get; private set; }
 
-    public VisualElement SelectBox { get; private set; }
+    public Image Bg { get; private set; }
+
+    public VisualElement ShowCardsBox { get; private set; }
 
     public VisualElement MainRoot { get; private set; }
 
     public VisualElement Root => _document?.rootVisualElement;
     public void InitializeDocument()
     {
+        StyleBtn_0 = Root?.Q<Button>("StyleBtn_0");
+        StyleBtn_1 = Root?.Q<Button>("StyleBtn_1");
+        StyleBtn_2 = Root?.Q<Button>("StyleBtn_2");
+        StyleBtn_3 = Root?.Q<Button>("StyleBtn_3");
         OneCardBtn = Root?.Q<Button>("OneCardBtn");
         ThreeCardBtn = Root?.Q<Button>("ThreeCardBtn");
-        SelectBox = Root?.Q<VisualElement>("SelectBox");
+        Bg = Root?.Q<Image>("Bg");
+        ShowCardsBox = Root?.Q<VisualElement>("ShowCardsBox");
         MainRoot = Root?.Q<VisualElement>("MainRoot");
     }
 }

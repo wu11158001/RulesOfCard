@@ -20,3 +20,5 @@ MonoBehaviour:
     _path: Assets/UIToolKitAssets/Game/SelectModeView.uxml
   - _type: 0
     _path: Assets/UIToolKitAssets/Game/PokerGame.uxml
+  - _type: 0
+    _path: Assets/UIToolKitAssets/Game/WinView.uxml

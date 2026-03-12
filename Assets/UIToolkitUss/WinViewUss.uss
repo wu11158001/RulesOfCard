@@ -1,0 +1,64 @@
+:root {
+}
+
+.Init {
+    top: 100%;
+    position: absolute;
+    transition-timing-function: ease-out;
+    transition-duration: 0.5s;
+}
+
+.ShowAni-Up {
+    top: 30%;
+    position: absolute;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+.BtnNormal {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    align-items: center;
+    top: 20%;
+    aspect-ratio: 3.6;
+    width: auto;
+    height: auto;
+    background-color: rgb(255, 164, 0);
+    border-left-color: rgb(142, 100, 0);
+    border-right-color: rgb(142, 100, 0);
+    border-top-color: rgb(142, 100, 0);
+    border-bottom-color: rgb(142, 100, 0);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 28px;
+    -unity-font-style: bold;
+    color: rgb(255, 233, 189);
+    -unity-text-outline-color: rgb(125, 70, 0);
+    text-shadow: 1px 1px 0 rgb(2, 2, 2);
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    flex-basis: 20%;
+}
+
+.BtnHover:hover {
+    background-color: rgb(217, 142, 7);
+}
+
+.BtnActive:active {
+    background-color: rgb(217, 142, 7);
+    aspect-ratio: 3.5;
+}

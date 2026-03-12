@@ -1655,7 +1655,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Back_D4_Jocker
+      name: Joker_D4
       rect:
         serializedVersion: 2
         x: 1215
@@ -1784,7 +1784,6 @@ TextureImporter:
       Back_D4_2: -3662226677638429102
       Back_D4_3: -5435704671812506096
       Back_D4_4: 6198130737042354683
-      Back_D4_Jocker: 4529642606237672715
       Deck04_0: -5726712806383344964
       Deck04_1: -3250016260679370238
       Deck04_10: -8860776167320091503
@@ -1837,6 +1836,7 @@ TextureImporter:
       Deck04_7: 6162712646781341140
       Deck04_8: 5945614531890900741
       Deck04_9: 5604500674867207301
+      Joker_D4: 4529642606237672715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

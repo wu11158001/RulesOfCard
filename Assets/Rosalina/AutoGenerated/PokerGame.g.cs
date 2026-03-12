@@ -15,6 +15,12 @@ public partial class PokerGame
 {
     [SerializeField]
     private UIDocument _document;
+    public Button NewGameBtn { get; private set; }
+
+    public Button ReStartBtn { get; private set; }
+
+    public Button PreStepBtn { get; private set; }
+
     public VisualElement StockPanel { get; private set; }
 
     public VisualElement WastePanel { get; private set; }
@@ -51,6 +57,8 @@ public partial class PokerGame
 
     public VisualElement Bg { get; private set; }
 
+    public VisualElement UIBox { get; private set; }
+
     public VisualElement TopBox { get; private set; }
 
     public VisualElement BottomBox { get; private set; }
@@ -62,6 +70,9 @@ public partial class PokerGame
     public VisualElement Root => _document?.rootVisualElement;
     public void InitializeDocument()
     {
+        NewGameBtn = Root?.Q<Button>("NewGameBtn");
+        ReStartBtn = Root?.Q<Button>("ReStartBtn");
+        PreStepBtn = Root?.Q<Button>("PreStepBtn");
         StockPanel = Root?.Q<VisualElement>("StockPanel");
         WastePanel = Root?.Q<VisualElement>("WastePanel");
         EmptyPanel = Root?.Q<VisualElement>("EmptyPanel");
@@ -80,6 +91,7 @@ public partial class PokerGame
         BasePoker = Root?.Q<VisualElement>("BasePoker");
         DragPanel = Root?.Q<VisualElement>("DragPanel");
         Bg = Root?.Q<VisualElement>("Bg");
+        UIBox = Root?.Q<VisualElement>("UIBox");
         TopBox = Root?.Q<VisualElement>("TopBox");
         BottomBox = Root?.Q<VisualElement>("BottomBox");
         DragBox = Root?.Q<VisualElement>("DragBox");

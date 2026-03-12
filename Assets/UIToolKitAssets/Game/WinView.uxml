@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIToolkitUss/WinViewUss.uss?fileID=7433441132597879392&amp;guid=c10c3345dc7727042a3ec02d2ae0f8c8&amp;type=3"/>
+    <ui:VisualElement name="MainRoot" style="flex-grow: 1;">
+        <ui:VisualElement name="FrameBox" class="Init" style="width: 30%; height: 30%; align-self: center; background-color: rgb(255, 230, 160); border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme%20SDF.asset?fileID=11400000&amp;guid=a2a57ea7a286c3d4f8741fc3df13e6b1&amp;type=2#UnityDefaultRuntimeTheme SDF&quot;); align-items: center; border-left-color: rgb(255, 172, 0); border-right-color: rgb(255, 172, 0); border-top-color: rgb(255, 172, 0); border-bottom-color: rgb(255, 172, 0); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;">
+            <ui:Label text="恭喜!" style="font-size: 80px; -unity-text-align: upper-center; -unity-font-style: bold; color: rgb(233, 138, 41); text-shadow: 2px 2px 0 rgb(2, 2, 2); margin-top: 25px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;"/>
+            <ui:Button text="新遊戲" name="NewGameBtn" class="BtnNormal BtnHover BtnActive"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
