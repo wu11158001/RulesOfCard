@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public partial class WinView : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public partial class WinView : MonoBehaviour
             Destroy(gameObject);
         };
 
+        StartCoroutine(IShowAni_Up());
+    }
+
+    /// <summary>
+    /// 顯示動畫
+    /// </summary>
+    private IEnumerator IShowAni_Up()
+    {
+        yield return null;
         FrameBox.AddToClassList("ShowAni-Up");
     }
 }

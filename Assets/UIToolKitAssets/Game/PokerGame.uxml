@@ -27,7 +27,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="DragBox" class="base-box" style="position: absolute; margin-top: 0%; margin-right: 0%; margin-left: 0%; margin-bottom: 0%;">
             <ui:VisualElement name="DragPanel" class="base-panel" style="flex-grow: 0; visibility: hidden; display: flex;">
-                <ui:VisualElement name="BasePoker" class="base-poker" style="background-image: url(&quot;project://database/Assets/Textures/PokerCards/Deck01.png?fileID=1842537641911522891&amp;guid=5f0074f1c36da4a71bf1a5e1528a2f35&amp;type=3#Back_D1_1&quot;); display: flex;">
+                <ui:VisualElement name="BasePoker" class="base-poker" style="background-image: url(&quot;project://database/Assets/Textures/PokerCards/Deck01.png?fileID=1842537641911522891&amp;guid=5f0074f1c36da4a71bf1a5e1528a2f35&amp;type=3#Back_D1_1&quot;);">
                     <ui:Image name="BasePokerValue" class="base-poker base-poker-value" style="visibility: visible; flex-grow: 0; justify-content: space-between;"/>
                 </ui:VisualElement>
             </ui:VisualElement>

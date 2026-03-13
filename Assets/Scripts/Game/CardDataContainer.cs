@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class CardDataContainer
 {
@@ -11,8 +12,9 @@ public class CardDataContainer
     public EventCallback<PointerUpEvent> PointerUpEvent;
 
     VisualElement DragPanel;
+    VisualElement WastePanel;
     Action<CardDataContainer> CheckDropTargetAction;
-    Action<CardDataContainer> CheckDoubleClickAction;
+    Func<CardDataContainer, bool> CheckDoubleClickAction;
 
     public VisualElement BackCard;
     public VisualElement FontCard;
@@ -24,45 +26,27 @@ public class CardDataContainer
     public Vector2 StartPosition;
     private Vector2 DragOffset;
 
-    // 雙擊
-    private float lastClickTime = 0f;
-    private const float DoubleClickThreshold = 0.25f;
+    // 點擊判斷
+    private float ClickTime;
+    private float ChechTime = 0.25f;
 
-    public CardDataContainer(PokerSkinData data, VisualElement backCard, VisualElement fontCard, VisualElement dragPanel, 
-        Action<CardDataContainer> checkDropTargetAction, Action<CardDataContainer> checkDoubleClickAction)
+    public CardDataContainer(PokerSkinData data, VisualElement backCard, VisualElement fontCard, VisualElement dragPanel, VisualElement wastePanel,
+        Action<CardDataContainer> checkDropTargetAction, Func<CardDataContainer, bool> checkDoubleClickAction)
     {
         this.SkinData = data;
         this.BackCard = backCard;
         this.FontCard = fontCard;
         this.DragPanel = dragPanel;
+        this.WastePanel = wastePanel;
         this.CheckDropTargetAction = checkDropTargetAction;
         this.CheckDoubleClickAction = checkDoubleClickAction;
 
         PointerDownEvent = evt => OnPointerDown(evt);
         PointerMoveEvent = evt => OnPointerMove(evt);
         PointerUpEvent = evt => OnPointerUp(evt);
-    }
 
-    /// <summary>
-    /// 監聽拖曳事件
-    /// </summary>
-    public void BindEvents()
-    {
-        UnbindEvents();
-
-        this.BackCard.RegisterCallback(PointerDownEvent);
-        this.BackCard.RegisterCallback(PointerMoveEvent);
-        this.BackCard.RegisterCallback(PointerUpEvent);
-    }
-
-    /// <summary>
-    /// 移除拖曳事件
-    /// </summary>
-    public void UnbindEvents()
-    {
-        this.BackCard.UnregisterCallback(PointerDownEvent);
-        this.BackCard.UnregisterCallback(PointerMoveEvent);
-        this.BackCard.UnregisterCallback(PointerUpEvent);
+        this.BackCard.RegisterCallback<PointerEnterEvent>(OnPointEnterEvent);
+        this.BackCard.RegisterCallback<PointerLeaveEvent>(OnPointLeaveEvent);
     }
 
     /// <summary>
@@ -74,7 +58,7 @@ public class CardDataContainer
         foreach (var cData in DragCards)
         {
             cData.DoGoBack();
-        }     
+        }
     }
 
     public void DoGoBack()
@@ -86,7 +70,7 @@ public class CardDataContainer
         FontCard.pickingMode = PickingMode.Position;
     }
 
-    #region Drag
+    #region 拖曳
 
     /// <summary>
     /// 拖曳移動
@@ -118,31 +102,59 @@ public class CardDataContainer
 
     #endregion
 
-    #region PointEvent
+    #region 拖曳事件
+
+    /// <summary>
+    /// 監聽拖曳事件
+    /// </summary>
+    public void BindEvents()
+    {
+        UnbindEvents();
+
+        this.BackCard.RegisterCallback(PointerDownEvent);
+        this.BackCard.RegisterCallback(PointerMoveEvent);
+        this.BackCard.RegisterCallback(PointerUpEvent);
+    }
+
+    /// <summary>
+    /// 移除拖曳事件
+    /// </summary>
+    public void UnbindEvents()
+    {
+        this.BackCard.UnregisterCallback(PointerDownEvent);
+        this.BackCard.UnregisterCallback(PointerMoveEvent);
+        this.BackCard.UnregisterCallback(PointerUpEvent);
+    }
 
     /// <summary>
     /// 滑鼠點擊
     /// </summary>
     private void OnPointerDown(PointerDownEvent evt)
     {
-        float currentTime = Time.time;
+        VisualElement parent = this.BackCard.parent;
+        if (parent == null) return;
 
-        // 檢查兩次點擊間隔
-        if (currentTime - lastClickTime < DoubleClickThreshold)
+        DragCards.Clear();
+
+        if (parent == WastePanel)
         {
-            // 觸發雙擊
-            lastClickTime = 0f;
-            CheckDoubleClickAction?.Invoke(this);
+            // 牌在發牌區
+
+            bool isLastCard = parent.Children().Last() == this.BackCard;
+
+            // 最後一張才能移動
+            if (isLastCard)
+            {
+                DragOffset = this.BackCard.WorldToLocal(evt.position);
+
+                CardDataContainer data = this.BackCard.userData as CardDataContainer;
+                SetDragCard(data, parent);
+                this.BackCard.CapturePointer(evt.pointerId);
+            }
         }
         else
         {
-            // 單擊
-            lastClickTime = currentTime;
-
-            VisualElement parent = this.BackCard.parent;
-            if (parent == null) return;
-
-            DragCards.Clear();
+            // 牌在操作區或結算區
 
             // 找出包含自己及下方的所有牌
             List<VisualElement> followCards = new();
@@ -158,27 +170,38 @@ public class CardDataContainer
             {
                 CardDataContainer data = c.userData as CardDataContainer;
 
-                data.IsDragging = true;
-                data.OriginalParent = parent;
-                data.StartPosition = new Vector2(c.style.left.value.value, c.style.top.value.value);
-
-                // 轉換座標到拖曳層
-                Vector2 cLocalInDragPanel = DragPanel.WorldToLocal(c.worldBound.position);
-                c.style.position = Position.Absolute;
-                c.style.left = cLocalInDragPanel.x;
-                c.style.top = cLocalInDragPanel.y;
-
-                DragPanel.Add(c);
-                data.BackCard.pickingMode = PickingMode.Ignore;
-                data.FontCard.pickingMode = PickingMode.Ignore;
-
-                DragCards.Add(data);
+                SetDragCard(data, parent);
             }
 
             this.BackCard.CapturePointer(evt.pointerId);
         }
-                
+
+        ClickTime = Time.time;
         evt.StopPropagation();
+    }
+
+    /// <summary>
+    /// 設置拖曳卡片
+    /// </summary>
+    private void SetDragCard(CardDataContainer data, VisualElement parent)
+    {
+        VisualElement backCard = data.BackCard;
+
+        data.IsDragging = true;
+        data.OriginalParent = parent;
+        data.StartPosition = new Vector2(backCard.style.left.value.value, backCard.style.top.value.value);
+
+        // 轉換座標到拖曳層
+        Vector2 cLocalInDragPanel = DragPanel.WorldToLocal(backCard.worldBound.position);
+        backCard.style.position = Position.Absolute;
+        backCard.style.left = cLocalInDragPanel.x;
+        backCard.style.top = cLocalInDragPanel.y;
+
+        DragPanel.Add(backCard);
+        data.BackCard.pickingMode = PickingMode.Ignore;
+        data.FontCard.pickingMode = PickingMode.Ignore;
+
+        DragCards.Add(data);
     }
 
     /// <summary>
@@ -197,12 +220,16 @@ public class CardDataContainer
     /// </summary>
     private void OnPointerUp(PointerUpEvent evt)
     {
-        if (!IsDragging || !this.BackCard.HasPointerCapture(evt.pointerId)) return;
+        if (!this.BackCard.HasPointerCapture(evt.pointerId)) return;
 
-        // 建立一個臨時清單，避免在迴圈中修改集合
-        List<CardDataContainer> cardsToProcess = new List<CardDataContainer>(DragCards);
+        bool? isFind = false;
+        float currentTime = Time.time;
+        if (currentTime - ClickTime <= ChechTime)
+        {
+            isFind = CheckDoubleClickAction?.Invoke(this);
+        }
 
-        // 統一結束拖曳狀態
+        List<CardDataContainer> cardsToProcess = new(DragCards);
         foreach (var cData in cardsToProcess)
         {
             cData.FontCard.pickingMode = PickingMode.Position;
@@ -211,8 +238,49 @@ public class CardDataContainer
 
         this.BackCard.ReleasePointer(evt.pointerId);
 
-        // 只對「第一張牌」執行放置檢測
-        this.CheckDropTargetAction?.Invoke(this);
+        if(isFind == false)
+            this.CheckDropTargetAction?.Invoke(this);
+    }
+
+    #endregion
+
+    #region 懸停事件
+
+    /// <summary>
+    /// 滑鼠進入
+    /// </summary>
+    private void OnPointEnterEvent(PointerEnterEvent evt)
+    {
+        VisualElement parent = this.BackCard.parent;
+        if (parent == null) return;
+
+        // 找出下方的所有牌透明
+        int index = parent.IndexOf(this.BackCard);
+        for (int i = index + 1; i < parent.childCount; i++)
+        {
+            CardDataContainer cardData = parent[i].userData as CardDataContainer;
+
+            cardData.BackCard.style.opacity = 0.2f;
+        }
+    }
+
+    /// <summary>
+    /// 滑鼠離開
+    /// </summary>
+    private void OnPointLeaveEvent(PointerLeaveEvent evt)
+    {
+        VisualElement parent = this.BackCard.parent;
+        if (parent == null) return;
+
+        // 找出下方的所有牌透明回復
+        List<VisualElement> followCards = new();
+        int index = parent.IndexOf(this.BackCard);
+        for (int i = index; i < parent.childCount; i++)
+        {
+            CardDataContainer cardData = parent[i].userData as CardDataContainer;
+
+            cardData.BackCard.style.opacity = 1;
+        }
     }
 
     #endregion

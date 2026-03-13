@@ -11,14 +11,16 @@ public partial class PokerGame : MonoBehaviour
     VisualElement[] TableauPanels;
     VisualElement[] FoundationPanels;
 
-    PokerStyle DefaultStyle = PokerStyle.Deck01;
-    List<VisualElement> Cards = new();
-    List<PokerSkinData> PokerSkinDatas = new();
+    private PokerStyle DefaultStyle = PokerStyle.Deck01;
+    private List<VisualElement> Cards = new();
+    private List<PokerSkinData> PokerSkinDatas = new();
+    private int ShowCount = 1;
+
+    private Stack<RecordData> StepRecordDatas = new();
 
     private readonly Vector2 StockAdd = new(-1, -1);
     private const float ColumnAddY = 40;
-
-    private Stack<RecordData> StepRecordDatas = new();
+    private const float RowAddX = 50;
 
     /// <summary>
     /// 記錄每次行動資料
@@ -44,6 +46,7 @@ public partial class PokerGame : MonoBehaviour
         InitializeDocument();
 
         DefaultStyle = pokerStyle;
+        ShowCount = showCount;
 
         // 操作區
         TableauPanels = new VisualElement[]
@@ -142,7 +145,8 @@ public partial class PokerGame : MonoBehaviour
                 data: pokerSkinData, 
                 backCard: backCard,
                 fontCard: frontCard,
-                dragPanel: DragPanel, 
+                dragPanel: DragPanel,
+                wastePanel: WastePanel,
                 checkDropTargetAction: CheckDropTarget,
                 checkDoubleClickAction: CheckDoubleClick);
 
@@ -244,19 +248,40 @@ public partial class PokerGame : MonoBehaviour
             return;
         }
 
-        // 取得牌堆最上面那張牌
-        VisualElement lastCard = StockPanel.Children().Last();
+        // 影藏發牌區所有牌
+        foreach (VisualElement card in WastePanel.Children())
+        {
+            card.style.left = 0;
+            card.style.top = 0;
+        }
 
-        lastCard.style.left = 0;
-        lastCard.style.top = 0;
-        lastCard.style.visibility = Visibility.Hidden;
+        // 發牌
+        int index = 0;
+        int totalChildren = StockPanel.childCount;
+        List<CardDataContainer> recordDatas = new();
+        for (int i = totalChildren - 1; i >= totalChildren - ShowCount; i--)
+        {
+            if (i < 0)
+                break;
 
-        data = lastCard.userData as CardDataContainer;
-        data.FontCard.style.visibility = Visibility.Visible;
-        data.BindEvents();
+            VisualElement card = StockPanel[i];
+            card.style.left = RowAddX * index;
+            card.style.top = 0;
+            card.style.visibility = Visibility.Hidden;
 
-        WastePanel.Add(lastCard);
-        SetRecordData(new() { data }, null);
+            data = card.userData as CardDataContainer;
+            data.FontCard.style.visibility = Visibility.Visible;
+            data.BindEvents();
+
+            WastePanel.Add(card);
+            recordDatas.Add(data);
+
+            index++;
+        }
+
+        recordDatas.Reverse();
+        SetRecordData(recordDatas, null);
+        FreshWasteCard();
     }
 
     /// <summary>
@@ -292,8 +317,12 @@ public partial class PokerGame : MonoBehaviour
             data.BackCard.style.left = 0;
             data.BackCard.style.top = 0;
 
+            List<CardDataContainer> wasteRecord = FreshWasteCard();
+            List<CardDataContainer> recordDatas = new(wasteRecord);
+            recordDatas.Add(data);
+
             CardDataContainer openCard = OpenNextCard(data, tableauPanel);
-            SetRecordData(new() { data }, openCard);
+            SetRecordData(recordDatas, openCard);
             InitPickMode(data);
         }
         else if(TableauPanels.Contains(target) && target.childCount == 0 && data.SkinData.Rank == RankEnum.King)
@@ -309,8 +338,12 @@ public partial class PokerGame : MonoBehaviour
                 cardDataContainer.BackCard.style.top = ColumnAddY * i;
             }
 
+            List<CardDataContainer> wasteRecord = FreshWasteCard();
+            List<CardDataContainer> recordDatas = new(wasteRecord);
+            recordDatas.AddRange(data.DragCards);
+
             CardDataContainer openCard = OpenNextCard(data, tableauPanel);
-            SetRecordData(data.DragCards, openCard);
+            SetRecordData(recordDatas, openCard);
             InitPickMode(data);
         }
         else if(targetData != null)
@@ -338,8 +371,12 @@ public partial class PokerGame : MonoBehaviour
                             cardDataContainer.BackCard.style.top = target.parent.resolvedStyle.top + (ColumnAddY * (i + 1));
                         }
 
+                        List<CardDataContainer> wasteRecord = FreshWasteCard();
+                        List<CardDataContainer> recordDatas = new(wasteRecord);
+                        recordDatas.AddRange(data.DragCards);
+
                         CardDataContainer openCard = OpenNextCard(data, tableauPanel);
-                        SetRecordData(data.DragCards, openCard);
+                        SetRecordData(recordDatas, openCard);
                         InitPickMode(data);
                         return;
                     }
@@ -375,8 +412,12 @@ public partial class PokerGame : MonoBehaviour
                     data.BackCard.style.left = 0;
                     data.BackCard.style.top = 0;
 
+                    List<CardDataContainer> wasteRecord = FreshWasteCard();
+                    List<CardDataContainer> recordDatas = new(wasteRecord);
+                    recordDatas.Add(data);
+
                     CardDataContainer openCard = OpenNextCard(data, tableauPanel);
-                    SetRecordData(new() { data }, openCard);
+                    SetRecordData(recordDatas, openCard);
                     InitPickMode(data);
                     JudgeWin();
                     return;
@@ -400,14 +441,14 @@ public partial class PokerGame : MonoBehaviour
     /// <summary>
     /// 檢測雙擊
     /// </summary>
-    private void CheckDoubleClick(CardDataContainer data)
+    private bool CheckDoubleClick(CardDataContainer data)
     {
         foreach (var foundation in FoundationPanels)
         {
             if (foundation.Contains(data.BackCard))
             {
                 // 已在結算區返回
-                return;
+                return false;
             }
         }
 
@@ -422,13 +463,18 @@ public partial class PokerGame : MonoBehaviour
                     foundation.Add(data.BackCard);
                     data.BackCard.style.left = 0;
                     data.BackCard.style.top = 0;
+
+                    List<CardDataContainer> wasteRecord = FreshWasteCard();
+                    List<CardDataContainer> recordDatas = new(wasteRecord);
+                    recordDatas.Add(data);
+
                     CardDataContainer openCard = OpenNextCard(data, foundation);
-                    SetRecordData(new() { data }, openCard);
-                    return;
+                    SetRecordData(recordDatas, openCard);
+                    return true;
                 }
             }
         }
-        else if(data.SkinData.Rank == RankEnum.King)
+        else if(data.SkinData.Rank == RankEnum.King && !ChechFoundationPanels(data))
         {
             // King尋找操作區空位
 
@@ -455,9 +501,12 @@ public partial class PokerGame : MonoBehaviour
                         cardDataContainers.Add(cardDataContainer);
                     }
 
+                    List<CardDataContainer> wasteRecord = FreshWasteCard();
+                    cardDataContainers.AddRange(wasteRecord);
+
                     CardDataContainer openCard = OpenNextCard(data, tableau);
                     SetRecordData(cardDataContainers, openCard);
-                    return;
+                    return true;
                 }
             }
         }
@@ -465,28 +514,44 @@ public partial class PokerGame : MonoBehaviour
         {
             // 尋找結算區同花色的區域
 
-            foreach (var foundation in FoundationPanels)
-            {
-                if (foundation.childCount > 0)
-                {
-                    VisualElement lastCard = foundation.Children().Last();
-                    CardDataContainer lastCardData = lastCard.userData as CardDataContainer;
-                    if(lastCardData != null 
-                        && lastCardData.SkinData.Suit == data.SkinData.Suit
-                        && lastCardData.SkinData.Rank == data.SkinData.Rank - 1)
-                    {
-                        foundation.Add(data.BackCard);
-                        data.BackCard.style.left = 0;
-                        data.BackCard.style.top = 0;
+            return ChechFoundationPanels(data);
+        }
 
-                        CardDataContainer openCard = OpenNextCard(data, foundation);
-                        SetRecordData(new() { data }, openCard);
-                        JudgeWin();
-                        return;
-                    }
+        return false;
+    }
+
+    /// <summary>
+    /// 檢測是否可放置在結算區
+    /// </summary>
+    private bool ChechFoundationPanels(CardDataContainer data)
+    {
+        foreach (var foundation in FoundationPanels)
+        {
+            if (foundation.childCount > 0)
+            {
+                VisualElement lastCard = foundation.Children().Last();
+                CardDataContainer lastCardData = lastCard.userData as CardDataContainer;
+                if (lastCardData != null
+                    && lastCardData.SkinData.Suit == data.SkinData.Suit
+                    && lastCardData.SkinData.Rank == data.SkinData.Rank - 1)
+                {
+                    foundation.Add(data.BackCard);
+                    data.BackCard.style.left = 0;
+                    data.BackCard.style.top = 0;
+
+                    List<CardDataContainer> wasteRecord = FreshWasteCard();
+                    List<CardDataContainer> recordDatas = new(wasteRecord);
+                    recordDatas.Add(data);
+
+                    CardDataContainer openCard = OpenNextCard(data, foundation);
+                    SetRecordData(recordDatas, openCard);
+                    JudgeWin();
+                    return true;
                 }
             }
         }
+
+        return false;
     }
 
     /// <summary>
@@ -498,6 +563,41 @@ public partial class PokerGame : MonoBehaviour
         {
             dragCard.FontCard.pickingMode = PickingMode.Position;
         }
+    }
+
+    /// <summary>
+    /// 發牌區重新整理
+    /// </summary>
+    /// <param name="data"></param>
+    private List<CardDataContainer> FreshWasteCard()
+    {
+        List<CardDataContainer> recordDatas = new();
+
+        // 重新排列
+        int totalChildren = WastePanel.childCount;
+
+        int offsetIndex = ShowCount - Mathf.Min(totalChildren, ShowCount);
+        int index = ShowCount - offsetIndex - 1;
+        for (int i = totalChildren - 1; i >= totalChildren - ShowCount; i--)
+        {
+            if (i < 0)
+                break;
+
+            VisualElement card = WastePanel[i];
+            CardDataContainer cardData = card.userData as CardDataContainer;
+            cardData.OriginalParent = WastePanel;
+            cardData.StartPosition = new(card.style.left.value.value, card.style.top.value.value);
+
+            card.style.left = RowAddX * index;
+            card.style.top = 0;
+
+            recordDatas.Add(card.userData as CardDataContainer);
+
+            index--;
+        }
+
+        recordDatas.Reverse();
+        return recordDatas;
     }
 
     /// <summary>
@@ -548,21 +648,6 @@ public partial class PokerGame : MonoBehaviour
                     CreateStockPokers(DefaultStyle, true);
                 });
             });
-    }
-
-    [ContextMenu("TT")]
-    public void TT()
-    {
-        AddressableManager.Instance.LoadAssets(
-        viewType: ViewEnum.WinView,
-        callback: (obj) =>
-        {
-            WinView winView = obj.GetComponent<WinView>();
-            winView.SetData(() =>
-            {
-                CreateStockPokers(DefaultStyle, true);
-            });
-        });
     }
 
     #region 操作記錄
@@ -626,6 +711,8 @@ public partial class PokerGame : MonoBehaviour
             recordData.OpenCard.FontCard.pickingMode = PickingMode.Ignore;
             recordData.OpenCard.UnbindEvents();
         }
+
+        FreshWasteCard();
     }
 
     #endregion
