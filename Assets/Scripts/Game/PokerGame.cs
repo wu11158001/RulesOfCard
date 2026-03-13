@@ -12,7 +12,7 @@ public partial class PokerGame : MonoBehaviour
     VisualElement[] FoundationPanels;
 
     private PokerStyle DefaultStyle = PokerStyle.Deck01;
-    private List<VisualElement> Cards = new();
+    private List<CardDataContainer> Cards = new();
     private List<PokerSkinData> PokerSkinDatas = new();
     private int ShowCount = 1;
 
@@ -99,7 +99,7 @@ public partial class PokerGame : MonoBehaviour
         StepRecordDatas.Clear();
         for (int i = 0; i < Cards.Count; i++)
         {
-            Cards[i].RemoveFromHierarchy();
+            Cards[i].BackCard.RemoveFromHierarchy();
         }
 
         if(isNewGame || PokerSkinDatas.Count == 0)
@@ -148,12 +148,13 @@ public partial class PokerGame : MonoBehaviour
                 dragPanel: DragPanel,
                 wastePanel: WastePanel,
                 checkDropTargetAction: CheckDropTarget,
-                checkDoubleClickAction: CheckDoubleClick);
+                checkDoubleClickAction: CheckDoubleClick,
+                anyDragEventChengeAction: AnyDragEventChenge);
 
             backCard.userData = cardDataContainer;
             backCard.Add(frontCard);
 
-            Cards.Add(backCard);
+            Cards.Add(cardDataContainer);
 
             if (tableauIndex < TableauPanels.Length)
             {
@@ -207,6 +208,17 @@ public partial class PokerGame : MonoBehaviour
 
                 stockIndex++;
             }
+        }
+    }
+
+    /// <summary>
+    /// 任意卡片拖曳事件
+    /// </summary>
+    private void AnyDragEventChenge(bool isDrag)
+    {
+        foreach (var card in Cards)
+        {
+            card.IsAnyDragging = isDrag;
         }
     }
 

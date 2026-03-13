@@ -156,7 +156,7 @@
     border-left-width: 3px;
     background-color: rgb(253, 195, 106);
     -unity-font-style: bold;
-    font-size: 100%;
+    font-size: 150%;
     width: auto;
     text-overflow: clip;
     white-space: nowrap;
@@ -194,7 +194,6 @@
     border-left-width: 3px;
     background-color: rgb(238, 160, 39);
     -unity-font-style: bold;
-    font-size: 100%;
     width: auto;
     text-overflow: clip;
     white-space: nowrap;
@@ -232,7 +231,6 @@
     border-left-width: 3px;
     background-color: rgb(238, 160, 39);
     -unity-font-style: bold;
-    font-size: 100%;
     width: auto;
     text-overflow: clip;
     white-space: nowrap;

@@ -15,6 +15,7 @@ public class CardDataContainer
     VisualElement WastePanel;
     Action<CardDataContainer> CheckDropTargetAction;
     Func<CardDataContainer, bool> CheckDoubleClickAction;
+    Action<bool> AnyDragEventChengeAction;
 
     public VisualElement BackCard;
     public VisualElement FontCard;
@@ -22,6 +23,7 @@ public class CardDataContainer
     public List<CardDataContainer> DragCards = new();
 
     // 拖曳
+    public bool IsAnyDragging = false;
     private bool IsDragging = false;
     public Vector2 StartPosition;
     private Vector2 DragOffset;
@@ -31,7 +33,7 @@ public class CardDataContainer
     private float ChechTime = 0.25f;
 
     public CardDataContainer(PokerSkinData data, VisualElement backCard, VisualElement fontCard, VisualElement dragPanel, VisualElement wastePanel,
-        Action<CardDataContainer> checkDropTargetAction, Func<CardDataContainer, bool> checkDoubleClickAction)
+        Action<CardDataContainer> checkDropTargetAction, Func<CardDataContainer, bool> checkDoubleClickAction, Action<bool> anyDragEventChengeAction)
     {
         this.SkinData = data;
         this.BackCard = backCard;
@@ -40,6 +42,7 @@ public class CardDataContainer
         this.WastePanel = wastePanel;
         this.CheckDropTargetAction = checkDropTargetAction;
         this.CheckDoubleClickAction = checkDoubleClickAction;
+        this.AnyDragEventChengeAction = anyDragEventChengeAction;
 
         PointerDownEvent = evt => OnPointerDown(evt);
         PointerMoveEvent = evt => OnPointerMove(evt);
@@ -187,6 +190,8 @@ public class CardDataContainer
     {
         VisualElement backCard = data.BackCard;
 
+        this.AnyDragEventChengeAction?.Invoke(true);
+
         data.IsDragging = true;
         data.OriginalParent = parent;
         data.StartPosition = new Vector2(backCard.style.left.value.value, backCard.style.top.value.value);
@@ -222,6 +227,8 @@ public class CardDataContainer
     {
         if (!this.BackCard.HasPointerCapture(evt.pointerId)) return;
 
+        this.AnyDragEventChengeAction?.Invoke(false);
+
         bool? isFind = false;
         float currentTime = Time.time;
         if (currentTime - ClickTime <= ChechTime)
@@ -239,7 +246,9 @@ public class CardDataContainer
         this.BackCard.ReleasePointer(evt.pointerId);
 
         if(isFind == false)
+        {
             this.CheckDropTargetAction?.Invoke(this);
+        }            
     }
 
     #endregion
@@ -252,7 +261,7 @@ public class CardDataContainer
     private void OnPointEnterEvent(PointerEnterEvent evt)
     {
         VisualElement parent = this.BackCard.parent;
-        if (parent == null) return;
+        if (parent == null || IsAnyDragging) return;
 
         // 找出下方的所有牌透明
         int index = parent.IndexOf(this.BackCard);
