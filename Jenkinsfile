@@ -64,8 +64,8 @@ pipeline {
             }
         }
 
-        stage('Build Main App') {
-            when { expression { return params.BUILD_APP } }
+        stage('Build EXE') {
+            when { expression { return params.BUILD_EXE } }
             steps {
                 echo "🚀 打包主程式..."
                 bat """
